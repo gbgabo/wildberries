@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components';
+import { getImage } from 'astro:assets';
+
+interface Props {
+    top?: string;
+    bottom?: string;
+    image?: string | ImageMetadata;
+    href: string;
+    variant?: 'primary' | 'secondary';
+  }
+  
+  const variants = {
+    primary: {
+      text: 'text-acid-green',
+      button: 'bg-cherry text-acid-green group-hover:bg-acid-green group-hover:text-cherry',
+    },
+    secondary: {
+      text: 'text-light-purple',
+      button: 'bg-light-purple text-darker-purple group-hover:bg-darker-purple group-hover:text-acid-green',
+    },
+  };
+
+const { top, bottom, image, href, variant = 'secondary' } = Astro.props;
+
+const optimizedImage = image ? await getImage({
+    src: image,
+    format: "webp",
+    width: 50,
+    height: 50,
+}) : undefined;
+---
+
+<a
+    class="group grid w-52 grid-cols-4 grid-rows-2 content-center items-center justify-center gap-x-2"
+    href={href}
+>
+    <p class={`col-span-4 py-2 transition-all ease-out ${variants[variant].text}`}>{top}</p>
+    <div class="w-8 place-self-center">
+        {optimizedImage ? (
+            <img alt="external link" src={optimizedImage.src} />
+        ) : (
+        <Icon name="material-symbols:open-in-new" />
+        )}
+    </div>
+    <p class={`col-span-3 whitespace-pre rounded py-1 transition-all ease-out ${variants[variant].button}`}>
+        {bottom}
+    </p>
+</a>

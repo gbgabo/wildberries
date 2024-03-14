@@ -1,0 +1,15 @@
+---
+import Button from './Button.astro';
+import type { Props as ButtonProps } from './Button.astro';
+
+interface Props extends ButtonProps {};
+
+const { href, variant = 'primary', icon } = Astro.props;
+---
+
+
+<div class="fixed bottom-8 z-10 flex h-16 w-full items-center justify-center text-center">
+    <Button href={href} icon={icon} variant={variant} fab>
+        <slot/>
+    </Button>
+</div>

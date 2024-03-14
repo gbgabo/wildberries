@@ -10,7 +10,9 @@ export default defineConfig({
     icon({
       include: {
         'tabler': ['download'],
-        'material-symbols': ['brush']
+        'material-symbols': ['open-in-new', 'brush'],
+        'bx': ['brush'],
+        'heroicons-outline': ['color-swatch']
       },
     })
   ]
