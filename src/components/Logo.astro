@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import wblogo from "../assets/images/ui/wb_logo.svg";
+---
+<div class="flex h-full w-full flex-wrap items-center justify-center gap-4 md:justify-start md:gap-6">
+    <Image 
+        class="md:max-w-36 max-w-44 w-auto h-full max-h-44 md:max-h-36"
+        src={wblogo} 
+        alt="Wildberries"
+    />
+    <h1 class="m-0 flex w-fit flex-col flex-wrap content-center text-pink items-start justify-start md:flex-row md:items-center md:gap-2">
+        <span class="font-semibold tracking-wide">Wildberries</span>
+        <slot name="concat"/>
+    </h1>
+</div>

@@ -1,0 +1,20 @@
+!
+name: "Wildberries"
+time: 1644788132
+author: "gb_gabo"
+@
+parentTheme: 2
+#
+attachContact, attachFile, attachInlineBot, attachLocation, attachPhoto, fileAttach, togglerActive: #900048
+avatarArchive, circleButtonTheme, seekDone: #900042
+avatarSavedMessages, avatarSavedMessages_big, background_text, background_textLight, badgeMuted, bubbleIn_time, bubbleOut_chatVerticalLine, bubbleOut_messageAuthor, bubbleOut_time, chatListIcon, chatListMute, chatListVerify, headerTabInactiveText, messageAuthor, messageVerticalLine, playerButtonActive, textLight: #C79BFF
+background, bubbleOut_background, file, filling, playerCoverPlaceholder, seekEmpty, togglerInactiveBackground: #240041
+badge, bubbleIn_textLink, bubbleOut_outline, bubbleOut_ticks, bubbleOut_ticksRead, bubbleOut_waveformActive, chatSendButton, checkActive, circleButtonChatIcon, circleButtonOverlayIcon, circleButtonRegularIcon, circleButtonThemeIcon, controlActive, headerButtonIcon, headerIcon, icon, iconActive, iconLight, introSectionActive, online, playerButton, progress, sliderActive, textLink, ticks, ticksRead, waveformActive: #00FFB7
+bubble_messageCheckOutline: #00FFB7B6
+bubble_messageSelection: #24004185
+bubbleIn_background, bubbleOut_file, circleButtonChat, circleButtonOverlay, circleButtonRegular, headerButton, headerLightBackground, headerTabActive, playerCoverIcon, textSelectionHighlight: #900041
+bubbleOut_waveformInactive, controlInactive, introSection, sliderInactive, waveformInactive: #246A56
+headerBackground, separator: #19002E
+headerText, text: #FF0E82
+seekReady: #8C3D62
+togglerActiveBackground, togglerInactive: #51003D

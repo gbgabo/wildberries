@@ -1,0 +1,26 @@
+{
+  "name": "wildberries-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.5.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.4.15",
+    "astro-icon": "^1.1.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "@iconify-json/material-symbols": "^1.1.74",
+    "@iconify-json/tabler": "^1.1.106",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.12"
+  }
+}

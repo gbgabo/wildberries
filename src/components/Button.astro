@@ -1,0 +1,33 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary';
+  icon?: string;
+  fab?: boolean;
+};
+
+const variants = {
+  primary: 'bg-cherry text-acid-green hover:bg-acid-green hover:text-cherry ',
+  secondary: 'bg-light-purple text-darker-purple hover:bg-darker-purple hover:text-light-purple ',
+};
+
+const { href, variant = 'primary', icon, fab } = Astro.props;
+---
+
+<a
+    href={href}
+    class={`
+        ${variants[variant]} 
+        ${(fab && 'rounded-3xl shadow-md') || 'rounded-xl'} 
+        grid grid-cols-[fit-content(200px)_auto] items-center justify-center gap-4 p-5 font-semibold tracking-wide transition-all ease-out
+    `}
+    >
+
+    {icon && <Icon class="col-span-1" name={icon} />}
+    <span class="whitespace-nowrap py-[1px]">
+        <slot />    
+    </span>
+
+</a>
