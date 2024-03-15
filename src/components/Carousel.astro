@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div
+  data-carousel
+  class="not-prose relative grid auto-rows-[auto_min-content] overflow-auto rounded-xl pt-2 text-light-purple"
+>
+  <div
+    data-carousel-content
+    class="relative flex w-full snap-x snap-mandatory items-center overflow-y-hidden scroll-smooth"
+    style="scrollbar-color: var(--wb-acid-green) #240041ee; scrollbar-width: thin"
+  >
+    <slot />
+  </div>
+  <div data-carousel-nav class="flex justify-center gap-3 py-2">
+    <button
+      data-carousel-preview
+      class="rounded-bl-3xl rounded-br-lg rounded-tl-3xl rounded-tr-lg bg-light-purple text-darker-purple drop-shadow-lg active:bg-acid-green active:text-cherry"
+      aria-label="Preview Slide"
+    >
+      <Icon class="mx-3 h-8 w-8 py-2" name="ep:arrow-left-bold" />
+    </button>
+    <button
+      data-carousel-next
+      class="rounded-bl-lg rounded-br-3xl rounded-tl-lg rounded-tr-3xl bg-light-purple text-darker-purple drop-shadow-lg active:bg-acid-green active:text-cherry"
+      aria-label="Next Slide"
+    >
+      <Icon class="mx-3 h-8 w-8 rotate-180 py-2" name="ep:arrow-left-bold" />
+    </button>
+  </div>
+</div>
+
+<style is:inline>
+  [data-carousel] {
+    --item-width: 100%;
+    --item-gaps: 0px;
+  }
+  [data-carousel-content] > :last-child {
+    padding-right: calc((100% - var(--item-width)) / 2);
+  }
+
+  [data-carousel-content] > :first-child {
+    padding-left: calc((100% - var(--item-width)) / 2);
+  }
+
+  [data-carousel-content] > * {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: var(--item-width);
+    scroll-snap-align: center;
+    padding: 0px var(--item-gaps);
+    overflow-x: hidden;
+    object-fit: contain;
+  }
+
+  [data-carousel-content] > * > * {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    object-fit: contain;
+  }
+</style>

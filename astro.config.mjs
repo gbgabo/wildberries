@@ -12,7 +12,8 @@ export default defineConfig({
         'tabler': ['download'],
         'material-symbols': ['open-in-new', 'brush'],
         'bx': ['brush'],
-        'heroicons-outline': ['color-swatch']
+        'heroicons-outline': ['color-swatch'],
+        'ep': ['arrow-left-bold', 'arrow-right-bold']
       },
     })
   ]

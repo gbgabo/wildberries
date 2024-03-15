@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@iconify-json/bx": "^1.1.10",
+    "@iconify-json/ep": "^1.1.15",
     "@iconify-json/heroicons-outline": "^1.1.10",
     "@iconify-json/material-symbols": "^1.1.74",
     "@iconify-json/tabler": "^1.1.106",
