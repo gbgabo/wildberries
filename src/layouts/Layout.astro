@@ -1,4 +1,6 @@
 ---
+// Supports weights 100-800
+import '@fontsource-variable/jetbrains-mono';
 import Footer from '../components/Footer.astro';
 import TopBar from '../components/TopBar.astro';
 
@@ -26,3 +28,9 @@ const { title, port } = Astro.props;
 	</body>
 	<Footer/>
 </html>
+
+<style is:inline is:global>
+  :root {
+    font-family: 'JetBrains Mono Variable', monospace;
+  }
+</style>
