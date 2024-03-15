@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import Hero from '../components/Hero.astro';
+import ExtendedFab from '../components/ExtendedFab.astro';
+import Chip from '../components/Chip.astro';
+import { Icon } from 'astro-icon/components';
 
 import { getCollection } from 'astro:content';
 
@@ -17,20 +21,36 @@ const { port } = Astro.props;
 const { Content } = await port.render();
 ---
 
-<Layout title="Welcome to Astro.">
-  <h1>{port.data.title}</h1>
-  <Content/>
-  {
-    port.data.assets &&
-      port.data.assets.map((asset:string) => {
-        return (
-          <div>
-            <p class="m-auto w-fit rounded-t-lg bg-darker-purple p-4 text-light-purple">{asset}</p>
-            <Button href={`/ports/${port.slug}/assets/${asset}`} icon="tabler:download">
-              Download
-            </Button>
-          </div>
-        );
-      })
-    }
+<Layout title="Welcome to Astro." port={port.data.title}>
+  
+  <Hero cta={{ text: 'Apply Theme', href: '#instructions', icon: 'material-symbols:brush' }},>
+		<div slot="title" class="h-16 w-max text-3xl md:h-28 md:text-5xl text-pink">
+			<h1>Wildberries</h1>
+		</div>
+		<span slot="subtitle">A dark purple theme for <Chip value={port.data.title} variant='secondary'/> and many other apps</span>
+	</Hero>
+  <div id="instructions" class="mx-auto max-w-4xl px-4 pb-4 text-[#D1D5DB] lg:text-xl">
+    <div class="mx-auto my-8 flex max-w-4xl items-center justify-center gap-4 text-2xl text-light-purple">
+      <Icon class="h-10 w-10 p-1" name="material-symbols:brush" />
+      <p>Instalation</p>
+    </div>
+    <Content/>
+    {
+      port.data.assets &&
+        port.data.assets.map((asset:string) => {
+          return (
+            <div>
+              <p class="m-auto w-fit rounded-t-lg bg-darker-purple p-4 text-light-purple">{asset}</p>
+              <Button href={`/ports/${port.slug}/assets/${asset}`} icon="tabler:download">
+                Download
+              </Button>
+            </div>
+          );
+        })
+      }
+  </div>
+  <ExtendedFab href="/" icon="bx:brush" variant="secondary">
+    Check all ports
+  </ExtendedFab>
+  
 </Layout>

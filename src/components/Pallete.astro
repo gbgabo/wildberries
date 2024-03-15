@@ -1,0 +1,27 @@
+---
+export interface Props {
+  colors: string[];
+  gridClasses?: string;
+  spanClasses?: string;
+  label?: boolean;
+  class?: string;
+};
+
+const { colors, gridClasses = 'grid-cols-3', spanClasses = 'col-span-1', label, class: className = 'h-full w-full' } = Astro.props;
+---
+
+<div class={`${className} overflow-hidden`}>
+  <div class={`grid h-full ${gridClasses}`}>
+    {colors.map((color) => {
+      return (
+        <div style={{ backgroundColor: color }} class={`relative ${spanClasses}`}>
+          {label && (
+            <p class="absolute bottom-0 m-0 w-full bg-dark-purple py-2 text-center text-sm uppercase text-white">
+              {color}
+            </p>
+          )}
+        </div>
+      );
+    })}
+  </div>
+</div>

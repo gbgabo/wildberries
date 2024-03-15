@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  value: string;
+  href?: string;
+  class?: string;
+  variant?: 'primary' | 'secondary' | 'dark';
+}
+
+const variants = {
+  primary: 'bg-grape text-white dark:bg-cherry dark:text-acid-green',
+  secondary: 'bg-light-purple text-darker-purple dark:bg-light-purple',
+  dark: 'text-darker-purple bg-light-purple/30 dark:text-acid-green dark:bg-darker-purple',
+};
+
+const { value, href, variant, class: className } = Astro.props;
+---
+
+<span
+  class:list={[
+    className,
+    'inline-block rounded-md px-2 py-0.5 font-medium',
+    variant ? variants[variant] : variants.primary,
+  ]}
+>
+  {
+    href ? (
+      <a href={href}>
+        {value}
+        <Icon name={'eva:diagonal-arrow-right-up-fill'} class="inline h-4 w-5" />
+      </a>
+    ) : (
+      value
+    )
+  }
+</span>

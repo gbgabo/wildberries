@@ -1,0 +1,24 @@
+---
+import Logo from '../components/Logo.astro';
+import Chip from '../components/Chip.astro';
+
+export interface Props {
+  port?: string;
+};
+
+const { port } = Astro.props;
+---
+
+<div class="fixed top-0 z-20 h-20 w-screen bg-darker-purple shadow-lg">
+  <a href="/" class="m-auto flex h-full w-fit flex-row flex-nowrap content-center items-center justify-center p-4 text-xl text-pink transition-colors ease-out hover:text-light-purple">
+    <Logo>
+      {
+        port && (
+          <span slot="concat" class="text-sm">
+            for <Chip value={port} variant='secondary'/>
+          </span>
+        )
+      }
+    </Logo>
+  </a>
+</div>
