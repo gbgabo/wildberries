@@ -1,4 +1,4 @@
-import { z, defineCollection } from "astro:content";
+import { z, defineCollection } from 'astro:content';
 
 const port = defineCollection({
   schema: z.object({
@@ -11,5 +11,5 @@ const port = defineCollection({
 });
 
 export const collections = {
-  post: port,
+  port: port,
 };
