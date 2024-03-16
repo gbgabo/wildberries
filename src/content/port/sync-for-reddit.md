@@ -1,6 +1,7 @@
 ---
 title: Sync for Reddit
-platform: ["android", "ios"]
+platform: ['android', 'ios']
+images: ['/src/assets/images/ports/sync-for-reddit.png']
 ---
 
 1. On your Sync for reddit app opened, go to `Settings > Theme customization`;

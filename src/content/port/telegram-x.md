@@ -1,7 +1,8 @@
 ---
 title: Telegram X
-platform: ["android"]
-assets: ["/Wildberries.tgx-theme"]
+platform: ['android']
+images: ['/src/assets/images/ports/telegram-x.png']
+assets: ['/Wildberries.tgx-theme']
 ---
 
 1. Download `Wildberries.tgx-theme`;

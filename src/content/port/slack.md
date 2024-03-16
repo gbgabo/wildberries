@@ -1,6 +1,7 @@
 ---
 title: Slack
-platform: ["web", "android", "ios"]
+platform: ['web', 'android', 'ios']
+images: ['/src/assets/images/ports/slack.png']
 ---
 
 1. On your Slack app opened, go to `Preferences > Themes`;

@@ -1,6 +1,7 @@
 ---
 title: dwm
-platform: ["linux"]
+platform: ['linux']
+images: ['/src/assets/images/ports/dwm.png']
 ---
 
 1. On your config.h or config.def.h, replace the `colors` array values to:

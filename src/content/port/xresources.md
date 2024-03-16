@@ -1,6 +1,7 @@
 ---
 title: Xresources
-platform: ["linux"]
+platform: ['linux']
+images: ['/src/assets/images/ports/xresources.png']
 ---
 
 On your home directory find a `.Xresources` file, or else create it, and paste the snippet below:

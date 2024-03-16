@@ -1,7 +1,8 @@
 ---
 title: zsh
 platform: ['linux', 'mac']
-assets: ["/wildberries.zsh-theme"]
+images: ['/src/assets/images/ports/zsh.png']
+assets: ['/wildberries.zsh-theme']
 ---
 
 #### This port requires:

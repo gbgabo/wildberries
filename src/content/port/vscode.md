@@ -1,7 +1,8 @@
 ---
 title: VScode
-platform: ["windows", "linux", "mac"]
-assets: ["/wildberries-0.0.1.vsix"]
+platform: ['windows', 'linux', 'mac']
+assets: ['/wildberries-0.0.1.vsix']
+images: ['/src/assets/images/ports/vscode.png', '/src/assets/images/ports/vscode-darker.png']
 ---
 
 ## From the marketplace:

@@ -1,7 +1,8 @@
 ---
 title: GTK
-platform: ["linux"]
-assets: ["/gtk.zip"]
+platform: ['linux']
+images: ['/src/assets/images/ports/gtk.png']
+assets: ['/gtk.zip']
 ---
 
 1. Download `gtk.zip`;
