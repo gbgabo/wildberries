@@ -3,8 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Hero from '../components/Hero.astro';
 import ExtendedFab from '../components/ExtendedFab.astro';
+import Carousel from '../components/Carousel.astro';
 import Logo from '../components/Logo.astro';
-
+import AssetsImage from '../components/AssetsImage.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -17,6 +18,11 @@ const ports = await getCollection('port');
 			<Logo/>
 		</div>
 		<span slot="subtitle">An experimental dark theme for people who love purple</span>
+		<Carousel>
+			<AssetsImage imagePath="/src/assets/images/ports/vscode.png" altText='vscode'/>
+			<AssetsImage imagePath="/src/assets/images/ports/duckduckgo.png" altText='vscode'/>
+			<AssetsImage imagePath="/src/assets/images/ports/gtk.png" altText='vscode'/>
+		</Carousel>
 	</Hero>
 	<main
 		class="bg-fixed p-8 md:p-20"

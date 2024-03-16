@@ -7,37 +7,51 @@ import Chip from '../components/Chip.astro';
 import { Icon } from 'astro-icon/components';
 
 import { getCollection } from 'astro:content';
+import AssetsImage from '../components/AssetsImage.astro';
+import Carousel from '../components/Carousel.astro';
 
 export async function getStaticPaths() {
   const ports = await getCollection('port');
   return ports.map((port) => {
     return {
       params: { port: port.slug },
-      props: { port }
+      props: { port },
     };
   });
 }
 const { port } = Astro.props;
+const { title, images, assets } = port.data;
 const { Content } = await port.render();
 ---
 
-<Layout title="Welcome to Astro." port={port.data.title}>
-  
-  <Hero cta={{ text: 'Apply Theme', href: '#instructions', icon: 'material-symbols:brush' }},>
-		<div slot="title" class="h-16 w-max text-3xl md:h-28 md:text-5xl text-pink">
-			<h1>Wildberries</h1>
-		</div>
-		<span slot="subtitle">A dark purple theme for <Chip value={port.data.title} variant='secondary'/> and many other apps</span>
-	</Hero>
+<Layout title="Welcome to Astro." port={title}>
+  <Hero cta={{ text: 'Apply Theme', href: '#instructions', icon: 'material-symbols:brush' }} ,>
+    <div slot="title" class="h-16 w-max text-3xl md:h-28 md:text-5xl text-pink">
+      <h1>Wildberries</h1>
+    </div>
+    <span slot="subtitle">A dark purple theme for <Chip value={title} variant="secondary" /> and many other apps</span>
+    {
+      images &&
+        (images.length > 1 ? (
+          <Carousel>
+            {images.map((image) => (
+              <AssetsImage imagePath={image} altText="" />
+            ))}
+          </Carousel>
+        ) : (
+          <AssetsImage imagePath={images[0]} altText="" />
+        ))
+    }
+  </Hero>
   <div id="instructions" class="mx-auto max-w-4xl px-4 pb-4 text-[#D1D5DB] lg:text-xl">
     <div class="mx-auto my-8 flex max-w-4xl items-center justify-center gap-4 text-2xl text-light-purple">
       <Icon class="h-10 w-10 p-1" name="material-symbols:brush" />
       <p>Instalation</p>
     </div>
-    <Content/>
+    <Content />
     {
-      port.data.assets &&
-        port.data.assets.map((asset:string) => {
+      assets &&
+        assets.map((asset: string) => {
           return (
             <div>
               <p class="m-auto w-fit rounded-t-lg bg-darker-purple p-4 text-light-purple">{asset}</p>
@@ -47,10 +61,7 @@ const { Content } = await port.render();
             </div>
           );
         })
-      }
+    }
   </div>
-  <ExtendedFab href="/" icon="bx:brush" variant="secondary">
-    Check all ports
-  </ExtendedFab>
-  
+  <ExtendedFab href="/" icon="bx:brush" variant="secondary"> Check all ports </ExtendedFab>
 </Layout>
