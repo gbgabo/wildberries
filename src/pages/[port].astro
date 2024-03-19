@@ -35,11 +35,11 @@ const { Content } = await port.render();
         (images.length > 1 ? (
           <Carousel>
             {images.map((image) => (
-              <AssetsImage imagePath={image} altText="" />
+              <AssetsImage class="w-full h-full object-contain" imagePath={image} altText="" />
             ))}
           </Carousel>
         ) : (
-          <AssetsImage imagePath={images[0]} altText="" />
+          <AssetsImage class="w-full h-full object-contain" imagePath={images[0]} altText="" />
         ))
     }
   </Hero>

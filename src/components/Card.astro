@@ -1,12 +1,15 @@
 ---
 interface Props {
-	title: string;
-	href: string;
+  title: string;
+  href: string;
 }
 
 const { href, title } = Astro.props;
 ---
 
-<a href={href} class="rounded-xl border-2 border-cherry bg-dark-purple p-6 pb-10 w-full text-xl text-acid-green no-underline transition-all ease-out hover:bg-acid-green hover:text-cherry md:text-2xl">
-	<h2>{title}</h2>
+<a
+  href={href}
+  class="rounded-xl border-2 font-bold border-cherry bg-dark-purple p-6 pb-10 w-full text-xl text-acid-green no-underline transition-all ease-out hover:bg-acid-green hover:text-cherry md:text-2xl"
+>
+  <h2>{title}</h2>
 </a>

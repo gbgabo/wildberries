@@ -33,15 +33,15 @@ import { Icon } from 'astro-icon/components';
 
 <style is:inline>
   [data-carousel] {
-    --item-width: 80%;
-    --item-gaps: 20px;
+    --item-width: 94%;
+    --item-gaps: 10px;
   }
   [data-carousel-content] > :last-child {
-    padding-right: calc((100% - var(--item-width)) / 2);
+    padding-right: calc((100% - var(--item-width)));
   }
 
   [data-carousel-content] > :first-child {
-    padding-left: calc((100% - var(--item-width)) / 2);
+    padding-left: calc((100% - var(--item-width)));
   }
 
   [data-carousel-content] > * {

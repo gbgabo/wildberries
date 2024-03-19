@@ -14,12 +14,14 @@ const { cta } = Astro.props;
 ---
 
 <main
-  class="relative z-20 p-10 flex items-center justify-center md:p-20 shadow-lg min-h-[700px]
+  class="relative z-20 p-10 md:mx-auto shadow-lg
       bg-darker-purple bg-gradient-to-t from-darker-purple from-80% to-cherry
         md:bg-gradient-to-tl md:from-60% md:to-95%"
 >
-  <div class="grid grid-rows-2 md:grid-cols-2 md:grid-rows-1
-          max-w-7xl gap-16 md:gap-40">
+  <div
+    class="lg:flex lg:gap-40 h-[700px] lg:items-center lg:py-0 md:py-20 py-12 grid grid-rows-2
+          max-w-7xl mx-auto gap-16"
+  >
     <div class="flex flex-col items-center justify-center md:items-start">
       <h1 class="m-0 text-4xl font-semibold md:text-5xl">
         <slot name="title" />
