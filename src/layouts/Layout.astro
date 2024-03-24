@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro';
 import TopBar from '../components/TopBar.astro';
 
 interface Props {
-	title: string;
-	port?: string;
+  title: string;
+  port?: string;
 }
 
 const { title, port } = Astro.props;
@@ -14,43 +14,48 @@ const { title, port } = Astro.props;
 
 <!doctype html>
 <html lang="en" class="bg-dark-purple list-decimal">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<TopBar port={port}/>
-	<body>
-		<slot />
-	</body>
-	<Footer/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <TopBar port={port} />
+  <body>
+    <slot />
+  </body>
+  <Footer />
+
+  <style is:inline is:global>
+    :root {
+      font-family: 'JetBrains Mono Variable', monospace;
+    }
+
+    pre {
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+
+  <script is:inline>
+    // Carousel Logic
+    const carousels = document.querySelectorAll('[data-carousel]');
+
+    carousels.forEach((carousel) => {
+      const nextButton = carousel.querySelector('[data-carousel-next]');
+      const previewButton = carousel.querySelector('[data-carousel-preview]');
+      const grid = carousel.querySelector('[data-carousel-content]');
+
+      nextButton.addEventListener('click', () => {
+        grid.scrollLeft += carousel.offsetWidth;
+      });
+
+      previewButton.addEventListener('click', () => {
+        grid.scrollLeft -= carousel.offsetWidth;
+      });
+    });
+    // ------------------
+  </script>
 </html>
-
-<style is:inline is:global>
-  :root {
-    font-family: 'JetBrains Mono Variable', monospace;
-  }
-</style>
-
-<script is:inline>
-	// Carousel Logic
-	const carousels = document.querySelectorAll('[data-carousel]');
-
-	carousels.forEach((carousel) => {
-	const nextButton = carousel.querySelector('[data-carousel-next]');
-	const previewButton = carousel.querySelector('[data-carousel-preview]');
-	const grid = carousel.querySelector('[data-carousel-content]');
-
-	nextButton.addEventListener('click', () => {
-		grid.scrollLeft += carousel.offsetWidth;
-	});
-
-	previewButton.addEventListener('click', () => {
-		grid.scrollLeft -= carousel.offsetWidth;
-	});
-	});
-	// ------------------
-</script>
