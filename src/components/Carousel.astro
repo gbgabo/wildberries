@@ -4,12 +4,12 @@ import { Icon } from 'astro-icon/components';
 
 <div
   data-carousel
-  class="not-prose relative grid auto-rows-[auto_min-content] overflow-auto rounded-xl pt-2 text-light-purple"
+  class="not-prose relative grid auto-rows-[auto_min-content] overflow-auto pt-2 h-full text-light-purple"
 >
   <div
     data-carousel-content
-    class="relative flex w-full snap-x snap-mandatory items-center overflow-y-hidden max-h-96 scroll-smooth"
-    style="scrollbar-color: var(--wb-acid-green) #240041ee; scrollbar-width: thin"
+    class="border-2 border-cherry relative flex w-full snap-x snap-mandatory rounded-xl items-center overflow-y-hidden py-2 scroll-smooth"
+    style="background-image: linear-gradient(to right, #00ffb712 1px, #19002e 1px), linear-gradient(to bottom, #00ffb760 2px, #19002e 2px); background-size: 20px 20px; scrollbar-color: var(--wb-acid-green) #240041ee; scrollbar-width: thin"
   >
     <slot />
   </div>
@@ -53,6 +53,7 @@ import { Icon } from 'astro-icon/components';
     padding: 0px var(--item-gaps);
     overflow-x: hidden;
     object-fit: contain;
+    height: 100%;
   }
 
   [data-carousel-content] > * > * {
