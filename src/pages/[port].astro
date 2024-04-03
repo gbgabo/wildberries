@@ -48,7 +48,19 @@ const { Content } = await port.render();
       <Icon class="h-10 w-10 p-1" name="material-symbols:brush" />
       <p>Instalation</p>
     </div>
-    <Content />
+
+    <div
+      class="sm:px-6 max-w-3xl
+        prose prose-lg dark:prose-invert dark:prose-headings:text-slate-300 prose-md
+      prose-p:text-darker-purple dark:prose-p:text-inherit
+        prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold
+      prose-a:text-grape dark:prose-a:text-[#399ee6]
+        prose-img:rounded-md prose-img:shadow-lg mt-8
+      marker:text-light-purple
+      prose-code:text-light-purple prose-code:px-2 prose-code:py-1 prose-code:rounded-md"
+    >
+      <Content />
+    </div>
     {
       assets &&
         assets.map((asset: string) => {
