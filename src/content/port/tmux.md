@@ -1,7 +1,7 @@
 ---
 title: tmux
 platform: ['windows', 'linux', 'mac']
-assets: ["/wildberries.tmuxtheme"]
+assets: ['wildberries.tmuxtheme']
 ---
 
 1. Download the `wildberries.tmuxtheme` file available below in this page;
