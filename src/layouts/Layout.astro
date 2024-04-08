@@ -1,26 +1,40 @@
 ---
 // Supports weights 100-800
 import '@fontsource-variable/jetbrains-mono';
+import { SEO } from 'astro-seo';
 import Footer from '../components/Footer.astro';
 import TopBar from '../components/TopBar.astro';
 
 interface Props {
-  title: string;
   port?: string;
+  meta: {
+    title: string;
+    description: string;
+    image: string;
+  };
 }
 
-const { title, port } = Astro.props;
+const { port, meta } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="bg-dark-purple list-decimal">
   <head>
+    <SEO
+      title={meta.title}
+      description={meta.description}
+      openGraph={{
+        basic: {
+          title: meta.title,
+          type: 'website',
+          image: meta.image,
+        },
+      }}
+    />
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
   </head>
   <TopBar port={port} />
   <body>

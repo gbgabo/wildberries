@@ -21,10 +21,15 @@ export async function getStaticPaths() {
 }
 const { port } = Astro.props;
 const { title, images, assets } = port.data;
+const meta = {
+  title: `Wildberries theme for ${title}`,
+  description: `A dark purple colorscheme for ${title} and many other apps`,
+  image: `/api/og/${port.slug}.png`,
+};
 const { Content } = await port.render();
 ---
 
-<Layout title="Welcome to Astro." port={title}>
+<Layout meta={meta} port={title}>
   <Hero cta={{ text: 'Apply Theme', href: '#instructions', icon: 'material-symbols:brush' }} ,>
     <div slot="title" class="w-max text-3xl md:text-5xl text-pink">
       <h1>Wildberries</h1>
