@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import path from 'path';
 import { ImageResponse } from '@vercel/og';
 import { getCollection } from 'astro:content';
+import type { APIRoute } from 'astro';
 
 export const config = {
   runtime: 'edge',
@@ -20,7 +21,7 @@ export function getStaticPaths() {
   });
 }
 
-export const GET = async ({ props }) => {
+export const GET: APIRoute = async ({ props }) => {
   const { page } = props;
   const { data } = page;
   const { title, subtitle } = data;
