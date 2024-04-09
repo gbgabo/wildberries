@@ -14,4 +14,4 @@ if (!images[imagePath])
   throw new Error(`"${imagePath}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<Image class={className} src={images[imagePath]()} alt={altText} />
+<Image class={className} src={images[imagePath]()} loading="eager" alt={altText} />

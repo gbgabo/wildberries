@@ -38,7 +38,7 @@ const optimizedImage = image
   <div class="w-8 place-self-center">
     {
       optimizedImage ? (
-        <img alt="external link" src={optimizedImage.src} />
+        <img loading="lazy" alt="external link" src={optimizedImage.src} />
       ) : (
         <Icon width={25} height={25} name="material-symbols:open-in-new" />
       )
