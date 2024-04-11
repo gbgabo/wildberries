@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Button from '../components/Button.astro';
-import Hero from '../components/Hero.astro';
-import ExtendedFab from '../components/ExtendedFab.astro';
-import Chip from '../components/Chip.astro';
+import Button from '@components/Button.astro';
+import Hero from '@components/Hero.astro';
+import ExtendedFab from '@components/ExtendedFab.astro';
+import Chip from '@components/Chip.astro';
 import { Icon } from 'astro-icon/components';
 
 import { getCollection } from 'astro:content';
-import AssetsImage from '../components/AssetsImage.astro';
-import Carousel from '../components/Carousel.astro';
+import AssetsImage from '@components/AssetsImage.astro';
+import Carousel from '@components/Carousel.astro';
 
 export async function getStaticPaths() {
   const ports = await getCollection('port');
