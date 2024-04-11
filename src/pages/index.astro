@@ -20,15 +20,17 @@ const meta = {
 
 <Layout meta={meta}>
   <Hero cta={{ text: 'Apply Theme', href: '#ports', icon: 'material-symbols:brush' }} ,>
-    <div slot="title" class="h-16 w-max text-3xl md:h-28 md:text-5xl">
+    <div slot="title" class="h-16 md:h-20">
       <Logo />
     </div>
     <span slot="subtitle">An experimental dark theme for people who love purple</span>
-    <Carousel>
-      <AssetsImage imagePath="/src/assets/images/ports/dwm.png" altText="vscode" />
-      <AssetsImage imagePath="/src/assets/images/ports/duckduckgo.png" altText="vscode" />
-      <AssetsImage imagePath="/src/assets/images/ports/gtk.png" altText="vscode" />
-    </Carousel>
+    <div class="max-w-5xl">
+      <Carousel>
+        <AssetsImage imagePath="/src/assets/images/ports/dwm.png" altText="vscode" />
+        <AssetsImage imagePath="/src/assets/images/ports/duckduckgo.png" altText="vscode" />
+        <AssetsImage imagePath="/src/assets/images/ports/gtk.png" altText="vscode" />
+      </Carousel>
+    </div>
   </Hero>
   <main
     class="bg-fixed p-8 md:p-20"

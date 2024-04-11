@@ -31,21 +31,24 @@ const { Content } = await port.render();
 
 <Layout meta={meta} port={title}>
   <Hero cta={{ text: 'Apply Theme', href: '#instructions', icon: 'material-symbols:brush' }} ,>
-    <div slot="title" class="w-max text-3xl md:text-5xl text-pink">
+    <div slot="title">
       <h1>Wildberries</h1>
     </div>
     <span slot="subtitle">A dark purple theme for <Chip value={title} variant="secondary" /> and many other apps</span>
     {
-      images &&
-        (images.length > 1 ? (
-          <Carousel>
-            {images.map((image) => (
-              <AssetsImage class="w-full h-full object-contain" imagePath={image} altText="" />
-            ))}
-          </Carousel>
-        ) : (
-          <AssetsImage class="w-full h-full object-contain" imagePath={images[0]} altText="" />
-        ))
+      images && (
+        <div class="max-w-5xl md:aspect-video">
+          {images.length > 1 ? (
+            <Carousel>
+              {images.map((image) => (
+                <AssetsImage class="w-full h-full object-contain" imagePath={image} altText="" />
+              ))}
+            </Carousel>
+          ) : (
+            <AssetsImage class="w-full h-full object-contain" imagePath={images[0]} altText="" />
+          )}
+        </div>
+      )
     }
   </Hero>
   <div id="instructions" class="mx-auto max-w-4xl px-4 pb-4 text-[#D1D5DB] lg:text-xl">
