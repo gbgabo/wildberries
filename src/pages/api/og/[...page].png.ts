@@ -48,16 +48,54 @@ export const GET: APIRoute = async ({ props }) => {
             tw: 'flex flex-col absolute bottom-14 left-14 w-10/12 items-start',
             children: [
               {
-                type: 'span',
+                type: 'div',
                 props: {
-                  tw: 'bg-[#c79bff] text-[#19002e] mb-3 text-4xl rounded-2xl py-3 px-5 mr-auto',
-                  children: 'Wildberries for',
+                  tw: 'flex flex-row',
+                  children: [
+                    {
+                      type: 'span',
+                      props: {
+                        tw: 'bg-[#19002e] text-[#ff0e82] border-2 border-[#ff0e82] mb-3 text-4xl h-20 rounded-2xl py-3 px-5 mr-auto',
+                        children: [
+                          {
+                            type: 'img',
+                            props: {
+                              tw: 'inline-block h-full',
+                              src: 'https://wildberries.style/img/ui/wb_logo.svg',
+                            },
+                          },
+                          {
+                            type: 'span',
+                            props: {
+                              tw: 'm-auto ml-2',
+                              children: 'Wildberries',
+                            },
+                          },
+                        ],
+                      },
+                    },
+                    {
+                      type: 'span',
+                      props: {
+                        tw: 'bg-[#19002e] text-[#ff0e82] h-20 text-4xl',
+                        children: [
+                          {
+                            type: 'span',
+                            props: {
+                              tw: 'm-auto ml-3',
+                              children: 'for',
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
                 },
               },
               {
                 type: 'span',
                 props: {
-                  tw: 'rounded-3xl px-8 py-5 border-4 border-[#ff0e82] bg-[#240041] mb-4 text-7xl text-[#ff0e82]',
+                  tw: 'rounded-3xl px-8 py-5 bg-[#c79bff] mb-4 text-7xl text-[#19002e]',
                   children: title,
                 },
               },
