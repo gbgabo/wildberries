@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
+import { importImage } from '~/lib/assets';
 
 interface Props {
   class?: string;
@@ -9,9 +10,7 @@ interface Props {
 }
 
 const { imagePath, altText, class: className } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/ports/*.{jpeg,jpg,png,gif}');
-if (!images[imagePath])
-  throw new Error(`"${imagePath}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`);
+const image = importImage(imagePath);
 ---
 
-<Image class={className} src={images[imagePath]()} loading="eager" alt={altText} />
+<Image class={className} src={image} loading="eager" alt={altText} />

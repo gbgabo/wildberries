@@ -2,7 +2,9 @@ import { readFileSync } from 'node:fs';
 import path from 'path';
 import { ImageResponse } from '@vercel/og';
 import { getCollection } from 'astro:content';
-import type { APIRoute } from 'astro';
+import type { APIRoute, GetImageResult } from 'astro';
+import { importImage } from '~/lib/assets';
+import { getImage } from 'astro:assets';
 
 export const config = {
   runtime: 'edge',
@@ -11,6 +13,28 @@ export const config = {
 const font = readFileSync(path.resolve('src/assets/jetbrains-mono-all-500-normal.woff'));
 
 const ports = await getCollection('port');
+
+const screenshotComponent = async (image: string) => {
+  if (!image) return null;
+  const screenshot = importImage(image);
+  const optimizedImage = await getImage({ src: screenshot, format: 'png' });
+  return {
+    type: 'div',
+    props: {
+      tw: 'absolute border overflow-x-auto border-[#00ffb7] h-full flex right-0 top-0 mt-8 w-1/2',
+      children: [
+        {
+          type: 'img',
+          props: {
+            tw: 'min-w-full object-cover',
+            src: 'http://localhost:4321' + optimizedImage.src,
+            ...optimizedImage.attributes,
+          },
+        },
+      ],
+    },
+  };
+};
 
 export function getStaticPaths() {
   return ports.map((page) => {
@@ -24,7 +48,8 @@ export function getStaticPaths() {
 export const GET: APIRoute = async ({ props }) => {
   const { page } = props;
   const { data } = page;
-  const { title, subtitle } = data;
+  const { title, subtitle, images } = data;
+
   // Astro doesn't support tsx endpoints so I'm using React-element objects
   const html = {
     type: 'div',
@@ -109,6 +134,7 @@ export const GET: APIRoute = async ({ props }) => {
             ],
           },
         },
+        images && (await screenshotComponent(images[0])),
       ],
     },
   };
