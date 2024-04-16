@@ -42,12 +42,11 @@ const screenshotComponent = async (image: string, url: string) => {
   const screenshot = importImage(image);
   const optimizedImage = await getImage({ src: screenshot, format: 'png' });
   const absoluteURL = new URL(url);
-  console.log(absoluteURL.origin);
 
   return {
     type: 'div',
     props: {
-      tw: 'absolute border overflow-x-auto border-[#00ffb7] h-full flex right-0 top-0 mt-8 w-1/2',
+      tw: 'absolute border-t border-l overflow-x-auto border-[#00ffb7] h-full flex right-0 top-0 mt-8 w-1/2',
       children: [
         {
           type: 'img',
