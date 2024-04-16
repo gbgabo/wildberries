@@ -14,10 +14,36 @@ const font = readFileSync(path.resolve('src/assets/jetbrains-mono-all-500-normal
 
 const ports = await getCollection('port');
 
-const screenshotComponent = async (image: string) => {
+const logoComponent = {
+  type: 'span',
+  props: {
+    tw: 'bg-[#19002e] text-[#ff0e82] border-2 border-[#ff0e82] mb-3 text-4xl h-20 rounded-2xl py-3 px-5 mr-auto',
+    children: [
+      {
+        type: 'img',
+        props: {
+          tw: 'inline-block h-full',
+          src: 'https://wildberries.style/img/ui/wb_logo.svg',
+        },
+      },
+      {
+        type: 'span',
+        props: {
+          tw: 'm-auto ml-2',
+          children: 'Wildberries',
+        },
+      },
+    ],
+  },
+};
+
+const screenshotComponent = async (image: string, url: string) => {
   if (!image) return null;
   const screenshot = importImage(image);
   const optimizedImage = await getImage({ src: screenshot, format: 'png' });
+  const absoluteURL = new URL(url);
+  console.log(absoluteURL.origin);
+
   return {
     type: 'div',
     props: {
@@ -27,7 +53,7 @@ const screenshotComponent = async (image: string) => {
           type: 'img',
           props: {
             tw: 'min-w-full object-cover',
-            src: 'http://localhost:4321' + optimizedImage.src,
+            src: absoluteURL.origin + optimizedImage.src,
             ...optimizedImage.attributes,
           },
         },
@@ -45,7 +71,7 @@ export function getStaticPaths() {
   });
 }
 
-export const GET: APIRoute = async ({ props }) => {
+export const GET: APIRoute = async ({ props, request }) => {
   const { page } = props;
   const { data } = page;
   const { title, subtitle, images } = data;
@@ -77,28 +103,7 @@ export const GET: APIRoute = async ({ props }) => {
                 props: {
                   tw: 'flex flex-row',
                   children: [
-                    {
-                      type: 'span',
-                      props: {
-                        tw: 'bg-[#19002e] text-[#ff0e82] border-2 border-[#ff0e82] mb-3 text-4xl h-20 rounded-2xl py-3 px-5 mr-auto',
-                        children: [
-                          {
-                            type: 'img',
-                            props: {
-                              tw: 'inline-block h-full',
-                              src: 'https://wildberries.style/img/ui/wb_logo.svg',
-                            },
-                          },
-                          {
-                            type: 'span',
-                            props: {
-                              tw: 'm-auto ml-2',
-                              children: 'Wildberries',
-                            },
-                          },
-                        ],
-                      },
-                    },
+                    logoComponent,
                     {
                       type: 'span',
                       props: {
@@ -134,7 +139,7 @@ export const GET: APIRoute = async ({ props }) => {
             ],
           },
         },
-        images && (await screenshotComponent(images[0])),
+        images && (await screenshotComponent(images[0], request.url)),
       ],
     },
   };
