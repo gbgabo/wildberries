@@ -51,6 +51,106 @@ const { port, meta } = Astro.props;
       padding: 20px;
       border-radius: 10px;
     }
+
+    #instructions ol,
+    #instructions ul {
+      counter-reset: li;
+      /* Initiate a counter */
+      margin-left: 0;
+      /* Remove the default left margin */
+      padding-left: 0;
+      /* Remove the default left padding */
+    }
+
+    #instructions ol>li,
+    #instructions ul>li {
+      position: relative;
+      /* Create a positioning context */
+      margin: 20px 0px 20px 2em;
+      /* Give each list item a left margin to make room for the numbers */
+      padding: 4px 0px 4px 16px;
+      /* Add some spacing around the content */
+      list-style: none;
+      /* Disable the normal item numbering */
+    }
+
+    #instructions ol>li::before,
+    #instructions ul>li:before {
+      position: absolute;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      color: #19002e;
+      background: #c79bff;
+      font-weight: bold;
+      text-align: center;
+      margin-right: 8px;
+    }
+
+    #instructions ol>li:before {
+      content: counter(li);
+      /* Use the counter as content */
+      counter-increment: li;
+      /* Increment the counter by 1 */
+      top: -3px;
+      left: -2em;
+      /* Some space between the number and the content in browsers that support
+        generated content but not positioning it (Camino 2 is one example) */
+      padding: 8px;
+      border-radius: 10px;
+      width: 2em;
+    }
+
+    #instructions ul>li:before {
+      content: "•";
+      left: -1.6em;
+      border-radius: 35%;
+      width: 1.2em;
+      height: 1.2em;
+    }
+
+    #instructions li ol,
+    #instructions li ul {
+      margin-top: 6px;
+    }
+
+    #instructions ol ol li:last-child {
+      margin-bottom: 0;
+    }
+
+    #instructions li>p {
+      margin: 0;
+    }
+
+    #instructions hr {
+      border: 0;
+      border-top: 1px solid #c79bff;
+      margin: 15px 40px;
+    }
+
+    table {
+      margin: auto;
+      width: 100%;
+    }
+
+    thead {
+      background-color: #900048;
+      color: #00ffb7;
+    }
+
+    th {
+      padding: 10px;
+    }
+
+    td {
+      text-align: center;
+      color: #c79bff;
+      padding: 5px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #19002e;
+    }
   </style>
 
   <script is:inline>
