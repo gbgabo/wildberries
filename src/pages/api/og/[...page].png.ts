@@ -23,7 +23,7 @@ const logoComponent = {
         type: 'img',
         props: {
           tw: 'h-full',
-          src: 'https://wildberriestheme.vercel.app/img/ui/wb_logo.svg',
+          src: 'https://wildberries.style/img/ui/wb_logo.svg',
         },
       },
       {
@@ -37,29 +37,29 @@ const logoComponent = {
   },
 };
 
-// const screenshotComponent = async (image: string, url: string) => {
-//   if (!image) return null;
-//   const screenshot = importImage(image);
-//   const optimizedImage = await getImage({ src: screenshot, format: 'png' });
-//   const absoluteURL = new URL(url);
+const screenshotComponent = async (image: string, url: string) => {
+  if (!image) return null;
+  const screenshot = importImage(image);
+  const optimizedImage = await getImage({ src: screenshot, format: 'png' });
+  const absoluteURL = new URL(url);
 
-//   return {
-//     type: 'div',
-//     props: {
-//       tw: 'absolute border-t border-l border-[#00ffb7] h-full flex right-0 top-0 mt-8 w-1/2',
-//       children: [
-//         {
-//           type: 'img',
-//           props: {
-//             tw: 'min-w-full',
-//             src: absoluteURL.origin + optimizedImage.src,
-//             ...optimizedImage.attributes,
-//           },
-//         },
-//       ],
-//     },
-//   };
-// };
+  return {
+    type: 'div',
+    props: {
+      tw: 'absolute border-t border-l border-[#00ffb7] h-full flex right-0 top-0 mt-8 w-1/2',
+      children: [
+        {
+          type: 'img',
+          props: {
+            tw: 'min-w-full',
+            src: absoluteURL.origin + optimizedImage.src,
+            ...optimizedImage.attributes,
+          },
+        },
+      ],
+    },
+  };
+};
 
 interface jsx {
   type: string;
