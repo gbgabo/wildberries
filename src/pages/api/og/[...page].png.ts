@@ -23,7 +23,7 @@ const logoComponent = {
         type: 'img',
         props: {
           tw: 'h-full',
-          src: 'https://wildberriestheme.vercel.app/img/ui/wb_logo.svg',
+          src: 'https://wildberries.style/img/ui/wb_logo.svg',
         },
       },
       {
