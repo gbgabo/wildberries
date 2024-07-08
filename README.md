@@ -4,7 +4,7 @@
 </div>
 
 <div align="center">
-<img src="./src/assets/images/screenshot.png" alt="Wildberries">
+<img src="./src/assets/images/views.png" alt="Wildberries homepage screenshots on desktop and mobile">
 </div>
 
 Wildberries is a purple dark theme, with additional
