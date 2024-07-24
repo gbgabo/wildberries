@@ -4,24 +4,39 @@ import Chip from '@components/Chip.astro';
 
 export interface Props {
   port?: string;
+  search?: boolean;
 }
 
-const { port } = Astro.props;
+const { port, search = false } = Astro.props;
 ---
 
-<div class="fixed top-0 z-20 h-20 w-screen bg-darker-purple shadow-lg">
-  <a
-    href="/"
-    class="m-auto flex h-full w-fit flex-row flex-nowrap content-center items-center justify-center p-4 text-xl text-pink transition-colors ease-out hover:text-light-purple"
-  >
-    <Logo>
-      {
-        port && (
-          <span slot="concat" class="text-sm">
-            for <Chip value={port} variant="secondary" />
-          </span>
-        )
-      }
-    </Logo>
-  </a>
-</div>
+<header id="header" class=`fixed top-0 z-30 h-20 ${search && 'pb-5'} md:pb-0 w-screen transition-all duration-100 ease-in`>
+  <div class="m-auto max-w-7xl w-full flex flex-col md:flex-row h-full ">
+    <a
+      href="/"
+      class="flex h-full w-full md:w-fit flex-col md:flex-row flex-nowrap content-center items-center justify-center py-4 text-xl text-pink transition-colors ease-out hover:text-light-purple"
+    >
+      <Logo>
+        {
+          port && (
+            <span slot="concat" class="text-sm">
+              for <Chip value={port} variant="secondary" />
+            </span>
+          )
+        }
+      </Logo>
+    </a>
+    {search && (
+      <div class="w-fit relative grow max-w-sm m-auto md:mr-0">
+        <img class="absolute top-3 left-4 h-4 w-4 fill-dark-purple" src="/img/ui/search.svg" alt="Search">
+        <input
+          type="search"
+          name="query"
+          id="search-query"
+          class="h-10 w-full rounded-full bg-light-purple placeholder:text-dark-purple px-5 pl-12 text-sm shadow-md text-dark-purple focus:outline-none"
+          placeholder="Search"
+        />
+      </div>
+    )}
+  </div>
+</header>

@@ -18,12 +18,12 @@ const meta = {
 };
 ---
 
-<Layout meta={meta}>
+<Layout home meta={meta}>
   <Hero cta={{ text: 'Apply Theme', href: '#ports', icon: 'material-symbols:brush' }} ,>
-    <div slot="title" class="h-16 md:h-20">
-      <Logo />
+    <div slot="title" class="font-bold max-w-md">
+      A dark theme for purple lovers
     </div>
-    <span slot="subtitle">An experimental dark theme for people who love purple</span>
+    <span slot="subtitle">Deep purple colors with bold acid accents</span>
     <div class="max-w-5xl">
       <Carousel>
         <AssetsImage imagePath="/src/assets/images/ports/dwm.png" altText="vscode" />
@@ -41,10 +41,30 @@ const meta = {
   >
     <div class="m-auto max-w-7xl">
       <h2 class="md:text-xl font-semibold my-11 text-light-purple">Check all apps wilberries is available for:</h2>
-      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 min-h-96">
         {ports.map((port) => <Card href={`/${port.slug}`} title={port.data.title} />)}
       </div>
     </div>
   </main>
   <ExtendedFab href="/about" icon="heroicons-outline:color-swatch"> About Wildberries </ExtendedFab>
 </Layout>
+
+<script>    
+  const searchInput = document.querySelector(
+      "#search-query"
+  ) as HTMLInputElement;
+  const symbols = document.querySelectorAll(
+      "[data-card-title]"
+  ) as NodeListOf<HTMLHeadingElement>;
+
+  searchInput.addEventListener("input", (event) => {
+      const target = event.target as HTMLInputElement;
+      const value = target.value.toLowerCase();
+      symbols.forEach((element) => {
+          const isVisible = element
+              .textContent!.toLowerCase()
+              .includes(value);
+          element.parentElement!.classList.toggle("hidden", !isVisible);
+      });
+  });
+</script>
