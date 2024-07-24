@@ -5,16 +5,17 @@ import Chip from '@components/Chip.astro';
 export interface Props {
   port?: string;
   search?: boolean;
+  solid?: boolean;
 }
 
-const { port, search = false } = Astro.props;
+const { port, search = false, solid = false } = Astro.props;
 ---
 
-<header id="header" class=`fixed top-0 z-30 h-20 ${search && 'pb-5'} md:pb-0 w-screen transition-all duration-100 ease-in`>
+<header id="header" class=`fixed top-0 z-30 h-20 ${search && 'pb-5'} ${solid && 'bg-darker-purple'} md:pb-0 w-screen transition-all duration-100 ease-in`>
   <div class="m-auto max-w-7xl w-full flex flex-col md:flex-row h-full ">
     <a
       href="/"
-      class="flex h-full w-full md:w-fit flex-col md:flex-row flex-nowrap content-center items-center justify-center py-4 text-xl text-pink transition-colors ease-out hover:text-light-purple"
+      class=`flex h-full w-full md:w-fit ${!search && 'm-auto'} flex-col md:flex-row flex-nowrap content-center items-center justify-center py-4 text-xl text-pink transition-colors ease-out hover:text-light-purple`
     >
       <Logo>
         {
@@ -40,3 +41,44 @@ const { port, search = false } = Astro.props;
     )}
   </div>
 </header>
+
+{!solid && (
+  <script is:inline>
+  window.onload = function () {
+    let lastKnownScrollPosition = window.scrollY;
+    let ticking = true;
+
+    function appyHeaderStylesOnScroll() {
+      const header = document.getElementById('header');
+      if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
+        document.getElementById('header').classList.add('scroll');
+      } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
+        document.getElementById('header').classList.remove('scroll');
+      }
+      ticking = false;
+    }
+
+    appyHeaderStylesOnScroll();
+
+    function attachEvent(selector, event, fn) {
+      const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
+      if (matches && matches.length) {
+        matches.forEach((elem) => {
+          elem.addEventListener(event, (e) => fn(e, elem), false);
+        });
+      }
+    }
+
+    attachEvent([document], 'scroll', function () {
+      lastKnownScrollPosition = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          appyHeaderStylesOnScroll();
+        });
+        ticking = true;
+      }
+    });
+
+  }
+  </script>
+)}

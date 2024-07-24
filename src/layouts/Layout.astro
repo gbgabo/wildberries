@@ -8,6 +8,7 @@ import TopBar from '@components/TopBar.astro';
 interface Props {
   port?: string;
   home?: boolean;
+  solid?: boolean;
   meta: {
     title: string;
     description: string;
@@ -15,7 +16,7 @@ interface Props {
   };
 }
 
-const { port, home, meta } = Astro.props;
+const { port, home, meta, solid } = Astro.props;
 ---
 
 <!doctype html>
@@ -37,7 +38,7 @@ const { port, home, meta } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
   </head>
-  <TopBar search={home} port={port} />
+  <TopBar search={home} solid={solid} port={port} />
   <body>
     <slot />
   </body>
@@ -159,43 +160,7 @@ const { port, home, meta } = Astro.props;
     }
   </style>
 
-  <script is:inline>
-      window.onload = function () {
-        let lastKnownScrollPosition = window.scrollY;
-        let ticking = true;
-
-        function appyHeaderStylesOnScroll() {
-          const header = document.getElementById('header');
-          if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
-            document.getElementById('header').classList.add('scroll');
-          } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
-            document.getElementById('header').classList.remove('scroll');
-          }
-          ticking = false;
-        }
-
-        appyHeaderStylesOnScroll();
-
-        function attachEvent(selector, event, fn) {
-          const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
-          if (matches && matches.length) {
-            matches.forEach((elem) => {
-              elem.addEventListener(event, (e) => fn(e, elem), false);
-            });
-          }
-        }
-
-        attachEvent([document], 'scroll', function () {
-          lastKnownScrollPosition = window.scrollY;
-          if (!ticking) {
-            window.requestAnimationFrame(() => {
-              appyHeaderStylesOnScroll();
-            });
-            ticking = true;
-          }
-        });
-        
-      }
+ <script is:inline>
     // Carousel Logic
     const carousels = document.querySelectorAll('[data-carousel]');
 
