@@ -21,7 +21,7 @@ const { href, variant = 'primary', icon, fab } = Astro.props;
   class={`
         ${variants[variant]} 
         ${(fab && 'rounded-3xl shadow-md') || 'rounded-xl'} 
-        grid grid-cols-[fit-content(200px)_auto] items-center justify-center gap-4 p-5 font-semibold tracking-wide transition-all ease-out
+        grid grid-cols-[fit-content(200px)_auto] items-center justify-center gap-4 px-5 py-4 font-semibold tracking-wide transition-all ease-out
     `}
 >
   {icon && <Icon width={25} height={25} class="col-span-1" name={icon} />}

@@ -56,14 +56,15 @@ const meta = {
   const symbols = document.querySelectorAll(
       "[data-card-title]"
   ) as NodeListOf<HTMLHeadingElement>;
+  const portSection = document.getElementById('ports') as HTMLDivElement;
 
   searchInput.addEventListener("click", (event) => {
-    const portSection = document.getElementById('ports') as HTMLDivElement;
     portSection.scrollIntoView();
   });
 
   searchInput.addEventListener("input", (event) => {
       const target = event.target as HTMLInputElement;
+      portSection.scrollIntoView();
       const value = target.value.toLowerCase();
       symbols.forEach((element) => {
           const isVisible = element
