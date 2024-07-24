@@ -11,11 +11,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.6",
+    "@astrojs/check": "^0.8.2",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/jetbrains-mono": "^5.0.20",
     "@vercel/og": "^0.6.2",
-    "astro": "^4.4.15",
+    "astro": "^4.12.2",
     "astro-icon": "^1.1.0",
     "astro-seo": "^0.8.3",
     "tailwindcss": "^3.4.1",
