@@ -57,6 +57,11 @@ const meta = {
       "[data-card-title]"
   ) as NodeListOf<HTMLHeadingElement>;
 
+  searchInput.addEventListener("click", (event) => {
+    const portSection = document.getElementById('ports') as HTMLDivElement;
+    portSection.scrollIntoView();
+  });
+
   searchInput.addEventListener("input", (event) => {
       const target = event.target as HTMLInputElement;
       const value = target.value.toLowerCase();
