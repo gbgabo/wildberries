@@ -1,6 +1,7 @@
 ---
 import Logo from '@components/Logo.astro';
 import Chip from '@components/Chip.astro';
+import SearchBar from './SearchBar.astro';
 
 export interface Props {
   port?: string;
@@ -14,7 +15,7 @@ const { port, search = false, solid = false } = Astro.props;
 <header id="header" class=`fixed top-0 z-30 h-20 ${search && 'pb-5'} ${solid && 'bg-darker-purple'} md:pb-0 w-screen transition-all duration-100 ease-in`>
   <div class="m-auto max-w-7xl w-full flex flex-col md:flex-row h-full ">
     <a
-      href="/"
+      href="#top"
       class=`flex h-full w-full md:w-fit ${!search && 'm-auto'} flex-col md:flex-row flex-nowrap content-center items-center justify-center py-4 text-xl text-pink transition-colors ease-out hover:text-light-purple`
     >
       <Logo>
@@ -28,57 +29,34 @@ const { port, search = false, solid = false } = Astro.props;
       </Logo>
     </a>
     {search && (
-      <div class="w-fit relative grow max-w-sm m-auto md:mr-0">
-        <img class="absolute top-3 left-4 h-4 w-4 fill-dark-purple" src="/img/ui/search.svg" alt="Search">
-        <input
-          type="search"
-          name="query"
-          id="search-query"
-          class="h-10 w-full rounded-full bg-light-purple placeholder:text-dark-purple px-5 pl-12 text-sm shadow-md text-dark-purple focus:outline-none"
-          placeholder="Search"
-        />
-      </div>
+      <SearchBar />
     )}
   </div>
 </header>
 
-{!solid && (
-  <script is:inline>
-  window.onload = function () {
+<script>
     let lastKnownScrollPosition = window.scrollY;
     let ticking = true;
 
-    function appyHeaderStylesOnScroll() {
-      const header = document.getElementById('header');
+    function applyHeaderStylesOnScroll() {
+      const header = document.getElementById('header') as HTMLDivElement;
       if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
-        document.getElementById('header').classList.add('scroll');
+        header.classList.add('scroll');
       } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
-        document.getElementById('header').classList.remove('scroll');
+        header.classList.remove('scroll');
       }
       ticking = false;
     }
 
-    appyHeaderStylesOnScroll();
+    applyHeaderStylesOnScroll();
 
-    function attachEvent(selector, event, fn) {
-      const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
-      if (matches && matches.length) {
-        matches.forEach((elem) => {
-          elem.addEventListener(event, (e) => fn(e, elem), false);
-        });
-      }
-    }
-
-    attachEvent([document], 'scroll', function () {
+    document.addEventListener('scroll', function () {
       lastKnownScrollPosition = window.scrollY;
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          appyHeaderStylesOnScroll();
+          applyHeaderStylesOnScroll();
         });
         ticking = true;
       }
-    });
-
-  }
-  </script>
-)}
+    })
+</script>

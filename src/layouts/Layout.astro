@@ -39,7 +39,7 @@ const { port, home, meta, solid } = Astro.props;
     <meta name="generator" content={Astro.generator} />
   </head>
   <TopBar search={home} solid={solid} port={port} />
-  <body>
+  <body id="top">
     <slot />
   </body>
   <Footer />
