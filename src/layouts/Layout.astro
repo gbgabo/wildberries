@@ -5,7 +5,7 @@ import { SEO } from 'astro-seo';
 import Footer from '@components/Footer.astro';
 import TopBar from '@components/TopBar.astro';
 
-interface Props {
+export interface Props {
   port?: string;
   home?: boolean;
   solid?: boolean;
@@ -16,7 +16,7 @@ interface Props {
   };
 }
 
-const { port, home, meta, solid } = Astro.props;
+const { port, home, meta, solid } = Astro.props as Props;
 ---
 
 <!doctype html>
