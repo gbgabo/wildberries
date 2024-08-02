@@ -40,7 +40,7 @@ const { Content } = await port.render();
     </div>
     <span slot="subtitle">
       A dark purple theme for <Chip value={title} variant="secondary" /> and many other apps
-      <div class="flex text-sm mt-3 gap-2">
+      <div class="flex text-sm mt-3 gap-2 justify-center md:justify-start">
         {
           platforms.map((p) => <Chip value={p} variant="dark" />)
         }
