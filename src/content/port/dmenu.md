@@ -1,7 +1,7 @@
 ---
 title: dmenu
-platform: ["linux"]
-images: ["/src/assets/images/ports/dmenu.png"]
+platforms: ['linux']
+images: ['/src/assets/images/ports/dmenu.png']
 ---
 
 1. On your **config.h** or **config.def.h**, replace the `colors` array values to:

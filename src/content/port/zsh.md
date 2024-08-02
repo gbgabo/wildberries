@@ -1,6 +1,6 @@
 ---
 title: zsh
-platform: ['linux', 'mac']
+platforms: ['linux', 'mac']
 images: ['/src/assets/images/ports/zsh.png']
 assets: ['wildberries.zsh-theme']
 ---

@@ -1,6 +1,6 @@
 ---
 title: Sync for Reddit
-platform: ['android', 'ios']
+platforms: ['android', 'ios']
 images: ['/src/assets/images/ports/sync-for-reddit.png']
 ---
 

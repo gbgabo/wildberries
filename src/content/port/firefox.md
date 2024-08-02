@@ -1,6 +1,6 @@
 ---
 title: Firefox
-platform: ['windows', 'linux', 'mac']
+platforms: ['windows', 'linux', 'mac']
 ---
 
 ## Install from Firefox Addon:

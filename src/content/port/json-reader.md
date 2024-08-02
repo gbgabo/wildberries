@@ -1,6 +1,7 @@
 ---
 title: JSON Reader
 images: ['/src/assets/images/ports/json-reader.png']
+platforms: ['web']
 ---
 
 1. Once you have JSON Reader extension installed on your web browser, access the options page for the extension.

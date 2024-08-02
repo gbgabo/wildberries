@@ -1,6 +1,6 @@
 ---
 title: dwm
-platform: ['linux']
+platforms: ['linux']
 images: ['/src/assets/images/ports/dwm.png']
 ---
 

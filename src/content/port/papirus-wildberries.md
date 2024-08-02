@@ -1,6 +1,6 @@
 ---
 title: Wildberries Icons
-platform: ['linux']
+platforms: ['linux']
 images: ['/src/assets/images/ports/papirus-wildberries.png']
 assets: ['papirus-wildberries.zip']
 ---

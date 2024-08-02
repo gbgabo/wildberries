@@ -1,6 +1,6 @@
 ---
 title: fzf
-platform: ['windows', 'linux', 'mac']
+platforms: ['windows', 'linux', 'mac']
 ---
 
 1. On your **bashrc**, **zshrc**, or any other shell init file, export the `FZF_DEFAULT_OPTS` enviroment variable:

@@ -1,6 +1,6 @@
 ---
 title: Slack
-platform: ['web', 'android', 'ios']
+platforms: ['web', 'android', 'ios']
 images: ['/src/assets/images/ports/slack.png']
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: tmux
-platform: ['windows', 'linux', 'mac']
+platforms: ['windows', 'linux', 'mac']
 assets: ['wildberries.tmuxtheme']
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Xresources
-platform: ['linux']
+platforms: ['linux']
 images: ['/src/assets/images/ports/xresources.png']
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Xscreensaver
-platform: ["linux"]
+platforms: ['linux']
 ---
 
 On your home directory find a `.Xresources` file, or else create it, and paste the snippet below:

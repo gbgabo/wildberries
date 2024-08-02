@@ -1,6 +1,6 @@
 ---
 title: VScode
-platform: ['windows', 'linux', 'mac']
+platforms: ['windows', 'linux', 'mac']
 images: ['/src/assets/images/ports/vscode.png', '/src/assets/images/ports/vscode-darker.png']
 assets: ['wildberries-0.0.1.vsix']
 ---

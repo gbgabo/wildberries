@@ -1,6 +1,6 @@
 ---
 title: GTK
-platform: ['linux']
+platforms: ['linux']
 images: ['/src/assets/images/ports/gtk.png']
 assets: ['gtk.zip']
 ---

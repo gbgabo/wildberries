@@ -7,10 +7,11 @@ import Chip from '@components/Chip.astro';
 import { Icon } from 'astro-icon/components';
 
 import { getCollection } from 'astro:content';
+import type { InferGetStaticParamsType, InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import AssetsImage from '@components/AssetsImage.astro';
 import Carousel from '@components/Carousel.astro';
 
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
   const ports = await getCollection('port');
   return ports.map((port) => {
     return {
@@ -18,9 +19,12 @@ export async function getStaticPaths() {
       props: { port },
     };
   });
-}
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
 const { port } = Astro.props;
-const { title, images, assets } = port.data;
+const { title, images, assets, platforms } = port.data;
 const meta = {
   title: `Wildberries theme for ${title}`,
   description: `A dark purple colorscheme for ${title} and many other apps`,
@@ -34,7 +38,14 @@ const { Content } = await port.render();
     <div slot="title">
       <h1>{title}</h1>
     </div>
-    <span slot="subtitle">A dark purple theme for <Chip value={title} variant="secondary" /> and many other apps</span>
+    <span slot="subtitle">
+      A dark purple theme for <Chip value={title} variant="secondary" /> and many other apps
+      <div class="flex text-sm mt-3 gap-2">
+        {
+          platforms.map((p) => <Chip value={p} variant="dark" />)
+        }
+      </div>
+    </span>
     {
       images && (
         <div class="max-w-5xl md:aspect-video">
