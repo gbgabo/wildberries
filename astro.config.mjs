@@ -11,10 +11,17 @@ export default defineConfig({
     icon({
       include: {
         tabler: ["download"],
-        "material-symbols": ["open-in-new", "brush"],
+        "material-symbols": [
+          "open-in-new",
+          "brush",
+          "edit-square-outline",
+          "bug-report",
+          "stack",
+        ],
         bx: ["brush"],
         "heroicons-outline": ["color-swatch"],
         ep: ["arrow-left-bold", "arrow-right-bold"],
+        eva: ["diagonal-arrow-right-up-fill"],
       },
     }),
   ],

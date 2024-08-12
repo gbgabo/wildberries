@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components';
+import Chip from './Chip.astro';
+
+const { port } = Astro.props;
+const { assets, platforms, contributors } = port.data;
+---
+<div
+  data-filter
+  class="z-10 hidden animate-fade-up rounded-lg border-2 p-5 shadow-md border-cherry bg-darker-purple md:block"
+>
+  <div class="mb-3">
+    <p class="text-muted z-10 pb-3 font-semibold text-light-purple">Details:</p>
+    <ul class="text-muted-purple">
+        <li class="mb-4">
+            <p class="flex items-center gap-1 flex-wrap">
+                <span class="flex items-center gap-2">
+                    <Icon name="material-symbols:stack"/>Platforms: 
+                </span>
+                { platforms.map((p) => <Chip value={p} variant="secondary" />)}
+            </p>
+        </li>
+        <li class="mb-4">
+            <a class="flex items-center gap-2 py-1" href="https://github.com/gbgabo/wildberries/issues/new/choose">
+                <Icon name="material-symbols:bug-report"/>Report an issue
+            </a>
+        </li>
+        <li class="mb-4">
+            <a class="flex items-center gap-2 py-1" href={`https://github.com/gbgabo/wildberries/edit/main/src/content/port/${port.slug}.md`}>
+                <Icon name="material-symbols:edit-square-outline"/>Edit this page
+            </a>
+        </li>
+    </ul>
+  </div>
+  {
+    assets && (
+        <div class="mb-3">
+            <p class="text-muted z-10 pb-3 font-semibold text-light-purple">Assets:</p>
+            <ul class="text-muted-purple">
+                { 
+                    assets.map((a) => <li><Chip value={a} href={`/ports/${a}`} /></li>)
+                }
+            </ul>
+        </div>
+    )
+  }
+  {
+    contributors && (
+        <div>
+            <p class="text-muted z-10 pb-3 font-semibold text-light-purple">Contributors:</p>
+            <ul class="text-muted-purple">
+                <li>Gabo</li>
+            </ul>
+        </div>
+    )
+  }
+</div>
+
+<button
+  class="fixed bottom-20 right-3 z-10 rounded-2xl p-3 shadow-md bg-cherry text-acid-green md:hidden"
+  data-toggle-filter
+  aria-label="Post filter"
+>
+</button>
