@@ -4,6 +4,7 @@ const port = defineCollection({
   schema: z.object({
     title: z.string(),
     platforms: z.array(z.string()),
+    contributors: z.array(z.string()).optional(),
     images: z.array(z.string()).optional(),
     assets: z.array(z.string()).optional(),
     draft: z.boolean().optional(),

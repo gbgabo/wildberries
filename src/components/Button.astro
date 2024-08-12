@@ -13,7 +13,7 @@ const variants = {
   secondary: 'bg-light-purple text-darker-purple hover:bg-darker-purple hover:text-light-purple ',
 };
 
-const { href, variant = 'primary', icon, fab } = Astro.props;
+const { href, variant = 'primary', icon, fab } = Astro.props as Props;
 ---
 
 <a

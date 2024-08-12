@@ -9,6 +9,8 @@ import PortDetails from '@components/PortDetails.astro';
 import { Icon } from 'astro-icon/components';
 
 import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
 import type { InferGetStaticParamsType, InferGetStaticPropsType, GetStaticPaths } from 'astro';
 import AssetsImage from '@components/AssetsImage.astro';
 import Carousel from '@components/Carousel.astro';
@@ -24,9 +26,11 @@ export const getStaticPaths = (async () => {
   });
 }) satisfies GetStaticPaths;
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+interface Props {
+  port: CollectionEntry<'port'>;
+}
 
-const { port } = Astro.props;
+const { port } = Astro.props as Props;
 const { title, images, assets, platforms } = port.data;
 const meta = {
   title: `Wildberries theme for ${title}`,
@@ -74,7 +78,7 @@ const { Content } = await port.render();
     </Fragment>
     <div id="instructions" class="mx-auto max-w-4xl p-4 text-[#D1D5DB] rounded-2xl bg-darker-purple">
       <div
-        class="p-6 max-w-full
+        class="px-2 py-3 max-w-full
           prose prose-md dark:prose-invert dark:prose-headings:text-inherit prose-md
         prose-p:text-darker-purple dark:prose-p:text-inherit
           prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold

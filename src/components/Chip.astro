@@ -14,7 +14,7 @@ const variants = {
   dark: 'text-darker-purple bg-light-purple/30 dark:text-acid-green dark:bg-darker-purple',
 };
 
-const { value, href, variant, class: className } = Astro.props;
+const { value, href, variant, class: className } = Astro.props as Props;
 ---
 
 <span
