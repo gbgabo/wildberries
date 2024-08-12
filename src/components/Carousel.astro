@@ -63,3 +63,21 @@ import { Icon } from 'astro-icon/components';
     object-fit: contain;
   }
 </style>
+
+<script>
+  const carousels = document.querySelectorAll('[data-carousel]') as NodeListOf<HTMLDivElement>;
+
+  carousels.forEach((carousel) => {
+    const nextButton = carousel.querySelector('[data-carousel-next]') as HTMLButtonElement;
+    const previewButton = carousel.querySelector('[data-carousel-preview]') as HTMLButtonElement;
+    const grid = carousel.querySelector('[data-carousel-content]') as HTMLDivElement;
+
+    nextButton.addEventListener('click', () => {
+      grid.scrollLeft += carousel.offsetWidth;
+    });
+
+    previewButton.addEventListener('click', () => {
+      grid.scrollLeft -= carousel.offsetWidth;
+    });
+  });
+</script>

@@ -159,24 +159,4 @@ const { port, home, meta, solid } = Astro.props as Props;
       background-color: #19002e;
     }
   </style>
-
- <script is:inline>
-    // Carousel Logic
-    const carousels = document.querySelectorAll('[data-carousel]');
-
-    carousels.forEach((carousel) => {
-      const nextButton = carousel.querySelector('[data-carousel-next]');
-      const previewButton = carousel.querySelector('[data-carousel-preview]');
-      const grid = carousel.querySelector('[data-carousel-content]');
-
-      nextButton.addEventListener('click', () => {
-        grid.scrollLeft += carousel.offsetWidth;
-      });
-
-      previewButton.addEventListener('click', () => {
-        grid.scrollLeft -= carousel.offsetWidth;
-      });
-    });
-    // ------------------
-  </script>
 </html>
