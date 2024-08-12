@@ -17,6 +17,7 @@ export default defineConfig({
           "edit-square-outline",
           "bug-report",
           "stack",
+          "info-rounded",
         ],
         bx: ["brush"],
         "heroicons-outline": ["color-swatch"],

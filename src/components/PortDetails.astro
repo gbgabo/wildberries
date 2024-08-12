@@ -61,4 +61,37 @@ const { assets, platforms, contributors } = port.data;
   data-toggle-filter
   aria-label="Post filter"
 >
+<Icon name="material-symbols:info-rounded"/>
 </button>
+
+<script>
+
+function attachEvent(selector, event, fn) {
+    const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.addEventListener(event, (e) => fn(e, elem), false);
+      });
+    }
+  }
+
+  const drawerSlide = (toggle, element) => {
+    attachEvent(toggle, 'click', function (e, elem) {
+      elem.classList.toggle('expanded');
+      document.querySelector(element)?.classList.toggle('hidden');
+      e.stopPropagation();
+    });
+
+    attachEvent([document], 'click', function (e) {
+      if (e.target.closest(element)) return;
+
+      document.querySelector(toggle)?.classList.remove('expanded');
+      document.querySelector(element)?.classList.add('hidden');
+    });
+  };
+
+  window.onload = function () {
+    // Table of content (TOC) toggling
+    drawerSlide('[data-toggle-filter]', '[data-filter]');
+  }
+</script>
