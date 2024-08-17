@@ -21,7 +21,7 @@ const { port, search = false, solid = false } = Astro.props as Props;
       <Logo>
         {
           port && (
-            <span slot="concat" class="text-sm">
+            <span slot="concat" class="text-sm m-auto">
               for <Chip value={port} variant="secondary" />
             </span>
           )

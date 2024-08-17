@@ -1,9 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 import wblogo from '@assets/images/ui/wb_logo.svg';
+
+const {flexDirection = 'flex-col md:flex-row md:gap-2'} = Astro.props;
 ---
 
-<div class="flex h-full w-full flex-wrap items-center justify-center gap-4 md:justify-start md:gap-6">
+<div class="inline-flex h-full w-fit flex-wrap items-center justify-center gap-3 md:justify-start">
   <Image
     class="md:max-w-36 max-w-44 w-auto h-full max-h-44 md:max-h-36"
     src={wblogo}
@@ -11,9 +13,9 @@ import wblogo from '@assets/images/ui/wb_logo.svg';
     loading="eager"
   />
   <h1
-    class="m-0 flex w-fit flex-col flex-wrap content-center text-pink items-start justify-start md:flex-row md:items-center md:gap-2"
+    class={`m-0 flex w-fit ${flexDirection} flex-wrap content-center text-pink items-start justify-start md:items-center`}
   >
     <span class="font-semibold tracking-wide">Wildberries</span>
-    <slot name="concat" />
+    <slot name="concat"/>
   </h1>
 </div>
