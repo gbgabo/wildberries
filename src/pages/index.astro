@@ -8,7 +8,9 @@ import AssetsImage from '@components/AssetsImage.astro';
 
 import { getCollection } from 'astro:content';
 
-const ports = await getCollection('port');
+const ports = await getCollection('port', ({ data }) => {
+  return data.draft !== true;
+});
 
 const meta = {
   title: 'Wildberries',
@@ -18,7 +20,7 @@ const meta = {
 ---
 
 <Layout home meta={meta}>
-  <Hero cta={{ text: 'Apply Theme', href: '#ports', icon: 'material-symbols:brush' }} ,>
+  <Hero cta={{ text: 'Apply Theme', href: '#ports', icon: 'material-symbols:brush' }}>
     <div slot="title" class="font-bold max-w-md mt-14 md:mt-0">
       A dark theme for purple lovers
     </div>

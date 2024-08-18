@@ -18,7 +18,9 @@ import PortLayout from '~/layouts/PortLayout.astro';
 import Logo from '~/components/Logo.astro';
 
 export const getStaticPaths = (async () => {
-  const ports = await getCollection('port');
+  const ports = await getCollection('port', ({ data }) => {
+  return data.draft !== true;
+});
   return ports.map((port) => {
     return {
       params: { port: port.slug },
@@ -32,7 +34,7 @@ interface Props {
 }
 
 const { port } = Astro.props as Props;
-const { title, images, assets, platforms } = port.data;
+const { title, images, assets } = port.data;
 const meta = {
   title: `Wildberries theme for ${title}`,
   description: `A dark purple colorscheme for ${title} and many other apps`,

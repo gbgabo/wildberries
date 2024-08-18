@@ -12,7 +12,7 @@ const { assets, platforms, contributors } = port.data;
 ---
 <div
   data-filter
-  class="z-10 hidden animate-fade-up rounded-lg border-2 p-5 shadow-md border-cherry bg-darker-purple md:block"
+  class="z-40 hidden animate-fade-up rounded-lg border-2 p-5 shadow-md border-cherry bg-darker-purple md:block"
 >
   <div class="mb-3">
     <p class="text-muted z-10 pb-3 font-semibold text-light-purple">Details:</p>
@@ -54,7 +54,16 @@ const { assets, platforms, contributors } = port.data;
         <div>
             <p class="text-muted z-10 pb-3 font-semibold text-light-purple">Contributors:</p>
             <ul class="text-muted-purple">
-                <li>Gabo</li>
+                { 
+                    contributors.map((c) => 
+                        <li>
+                            <a class="flex items-center gap-2 py-1" href={`https://github.com/${c}`}>
+                                <img class="inline h-full w-6 rounded-full" src="https://avatars.githubusercontent.com/u/749751?v=4" alt={`${c} user profile`}>
+                                {c}
+                            </a>
+                        </li>
+                    )
+                }
             </ul>
         </div>
     )
@@ -62,11 +71,11 @@ const { assets, platforms, contributors } = port.data;
 </div>
 
 <button
-  class="fixed bottom-20 right-3 z-10 rounded-2xl p-3 shadow-md bg-cherry text-acid-green md:hidden"
+  class="fixed bottom-20 right-3 rounded-2xl p-3 shadow-md bg-cherry text-acid-green md:hidden"
   data-toggle-filter
   aria-label="Post filter"
 >
-<Icon name="material-symbols:info-rounded"/>
+    <Icon name="material-symbols:info-rounded"/>
 </button>
 
 <script>

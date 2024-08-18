@@ -1,10 +1,13 @@
 ---
 title: Windows Terminal
 platforms: ['windows']
-images: ['/src/assets/images/ports/dmenu.png']
+contributors: ['Efreak']
 ---
 
-1. On your **config.h** or **config.def.h**, replace the `colors` array values to:
+1. Open your `settings.json`. To open the file, select `Settings` in the Windows Terminal dropdown menu while holding `Shift`.
+
+2. Define the theme in the schemes array of your `settings.json` file:
+
    ```json
    {
      "name": "Wildberries",
@@ -28,3 +31,5 @@ images: ['/src/assets/images/ports/dmenu.png']
      "brightYellow": "#f5f5f5"
    }
    ```
+
+3. And of course, save the file and you're done!
