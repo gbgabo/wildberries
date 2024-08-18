@@ -44,7 +44,7 @@ const { Content } = await port.render();
 ---
 
 <Layout meta={meta} port={title}>
-  <Hero cta={{ text: 'Apply Theme', href: '#instructions', icon: 'material-symbols:brush' }} ,>
+  <Hero cta={{ text: 'Apply Theme', href: '#instructions-section', icon: 'material-symbols:brush' }} ,>
     <div slot="title">
       <a
       href="#top"
@@ -104,7 +104,7 @@ const { Content } = await port.render();
           assets.map((asset: string) => {
             return (
               <div>
-                <p class="m-auto w-fit rounded-t-lg bg-darker-purple p-4 text-light-purple">{asset}</p>
+                <p class="m-auto w-fit rounded-t-lg bg-dark-purple p-4 text-light-purple">{asset}</p>
                 <Button href={`/ports/${asset}`} icon="tabler:download">
                   Download
                 </Button>

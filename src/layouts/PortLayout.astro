@@ -1,14 +1,18 @@
-<section class="mx-auto max-w-7xl px-3 md:py-12 py-16 lg:py-20">
-  <slot name="heading" />
-  <div class="grid grid-cols-3">
-    <div class="col-span-3 md:col-span-2">
-      <slot />
-    </div>
-    <div class="fixed bottom-24 right-0 z-10 md:relative md:bottom-0 md:col-span-1">
-      <div class="sticky top-24 m-5">
-        <slot name="floating-bar" />
+<div
+id="instructions-section" 
+>
+  <section class="mx-auto max-w-7xl px-3 md:py-12 py-16 lg:py-20">
+    <slot name="heading" />
+    <div class="grid grid-cols-3">
+      <div class="col-span-3 md:col-span-2">
+        <slot />
+      </div>
+      <div class="fixed bottom-24 right-0 z-10 md:relative md:bottom-0 md:col-span-1">
+        <div class="sticky top-24 m-5">
+          <slot name="floating-bar" />
+        </div>
       </div>
     </div>
-  </div>
-  <slot name="footer" />
-</section>
+    <slot name="footer" />
+  </section>
+</div>
