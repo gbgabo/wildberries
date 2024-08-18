@@ -12,7 +12,7 @@ export interface Props {
 const { port, search = false, solid = false } = Astro.props as Props;
 ---
 
-<header id="header" class=`fixed top-0 z-30 h-20 ${search && 'pb-5'} ${solid && 'bg-darker-purple'} md:pb-0 w-screen transition-all duration-100 ease-in`>
+<header id="header" class=`fixed top-0 z-30 h-20 ${search && 'pb-5'} ${solid && 'bg-darker-purple'} ${port && 'hidden'} md:pb-0 w-screen transition-all duration-100 ease-in`>
   <div class="m-auto max-w-7xl w-full flex flex-col md:flex-row h-full ">
     <a
       href="#top"
@@ -21,7 +21,7 @@ const { port, search = false, solid = false } = Astro.props as Props;
       <Logo>
         {
           port && (
-            <span slot="concat" class="text-sm m-auto">
+            <span slot="concat" class="text-sm">
               for <Chip value={port} variant="secondary" />
             </span>
           )
