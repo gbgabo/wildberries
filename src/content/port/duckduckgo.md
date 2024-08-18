@@ -19,16 +19,15 @@ platforms: ['web']
      's=m',
      'w=n',
      'm=l',
-     'o=s',
+     'o=d',
      'j=900048',
      'a=p',
      'aa=c79bff',
      'u=-1',
      'x=00ffb7',
-     'y=44475a',
-     'af=1',
-     'ai=1',
+     'af=b',
      'f=1',
+     '21=240041',
    ];
    for (var i = 0; i < wildberries.length; i++) document.cookie = wildberries[i];
    alert('Appearance settings have successfully been updated!');
