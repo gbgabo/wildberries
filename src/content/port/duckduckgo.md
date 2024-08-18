@@ -9,29 +9,30 @@ platforms: ['web']
 1. To save the theme, go to [https://duckduckgo.com/](https://duckduckgo.com/);
 2. Open the browser devtools (`Ctrl+Shift+I` in most browsers);
 3. Paste the following snippet on the **console** tab;
-   ```js
-   var wildberries = [
-     '7=19002e',
-     '8=c79bff',
-     '9=ff0e82',
-     'ae=t',
-     't=p',
-     's=m',
-     'w=n',
-     'm=l',
-     'o=d',
-     'j=900048',
-     'a=p',
-     'aa=c79bff',
-     'u=-1',
-     'x=00ffb7',
-     'af=b',
-     'f=1',
-     '21=240041',
-   ];
-   for (var i = 0; i < wildberries.length; i++) document.cookie = wildberries[i];
-   alert('Appearance settings have successfully been updated!');
-   location.reload();
-   ```
+
+```js
+var wildberries = [
+  '7=19002e',
+  '8=c79bff',
+  '9=ff0e82',
+  'ae=t',
+  't=p',
+  's=m',
+  'w=n',
+  'm=l',
+  'o=d',
+  'j=900048',
+  'a=p',
+  'aa=c79bff',
+  'u=-1',
+  'x=00ffb7',
+  'af=b',
+  'f=1',
+  '21=240041',
+];
+for (var i = 0; i < wildberries.length; i++) document.cookie = wildberries[i];
+alert('Appearance settings have successfully been updated!');
+location.reload();
+```
 
 - To make your own changes on the applied theme, go to [https://duckduckgo.com/settings](https://duckduckgo.com/settings);
