@@ -1,3 +1,4 @@
+---
 title: betterdiscord
 images: ['/src/assets/images/ports/betterdiscord.png']
 platforms: ['linux', 'windows', 'mac']
