@@ -7,13 +7,12 @@ platforms: ['linux']
 ## Installation
 
 1. In your ~/.config/hypr/hyprland.conf file edit the lines under general {}
+2. Save the config file, the colors should automatically apply to the window borders
 
   ```
       col.active_border = rgb(ff0e82)
       col.inactive_border = rgb(900048)
   ```
-
-2. Save the config file, the colors should automatically apply to the window borders
 
 ## Troubleshoot
 
