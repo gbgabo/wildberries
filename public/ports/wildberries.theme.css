@@ -1,329 +1,122 @@
 /**
  * @name Wildberries
- * @version 1.0.0
- * @description Originally made by DagCord on github, but since it hasn't received any updates in years i modernized it to fix some inconsistencies, although the name is kinda the same the color hex values are not they are similar but no the same probably a massive coincidence we are not associated with the person in any way
+ * @version 1.0.1
+ * @description 🍒 A dark theme made for purple lovers
  * @author Dimitrios Psaroudakis
  * @source https://github.com/gbgabo/wildberries
- */
+*/
+
+@import url("https://mrtipson.github.io/DiscordCSS/css/base.css");
 
 :root {
-    --wildberries-primary: #19002e;
-    --wildberries-secondary: #240041;
-    --wildberries-secondary-alt: #c79bff;
-    --wildberries-tertiary: #900048;
-    --wildberries-accent-color: #00ffb7;
-    --wildberries-input-box: #900048;
-    --wildberries-mention: #97004c;
+    --wildberries-primary: #19002e; /*very-dark-purple*/
+    --wildberries-secondary: #240041; /*dark-purple*/
+    --wildberries-secondary-alt: #900048; /*purple*/
+    --wildberries-foreground: #ff0e82; /*bright-purple*/
+    --wildberries-foreground-alt: #c79bff; /*dull-purple*/
+    --wildberries-accent: #00ffb7; /*bright-green*/
     --wildberries-red: #d7004d;
-    --wildberries-svg: #00ffb7;
-    --wildberries-less-hot: #ff0e82;
-    --wildberries-scrollbar-track: var(--wildberries-primary);
-    --wildberries-scrollbar-thumb: var(--wildberries-secondary-alt);
+    --wildberries-blue: #399ee6;
+    --wildberries-yellow: #ffd700;
+    --wildberries-orange: #ff4500;
+    --wildberries-cyan: #00f7e2;
 }
 
-.theme-dark {
+.theme-dark.theme-dark {
+    --logo-primary: var(--wildberries-primary);
+    /* discord nitro text, probably other stuff */
+    --header-primary: var(--wildberries-foreground-alt);
+    /* big text */
+    --header-secondary: var(--wildberries-foreground);
+    /* subtext => id, active channel, code markdown, server of mention */
+    --text-normal: var(--wildberries-foreground-alt);
+    /* normal text */
     --background-primary: var(--wildberries-primary);
+    /* chat, call */
     --background-secondary: var(--wildberries-secondary);
-    --background-secondary-alt: var(--wildberries-secondary);
-    --background-floating: var(--wildberries-secondary);
-    --background-tertiary: var(--wildberries-tertiary);
-    --background-accent: var(--background-primary);
-    --background-mentioned-side: #00ffb780;
-    --interactive-active: var(--wildberries-accent-color);
-    --radio-group-dot-foreground: var(--wildberries-accent-color);
-    --channeltextarea-background: var(--wildberries-input-box);
-    --scrollbar-auto-thumb: var(--wildberries-scrollbar-thumb);
-    --scrollbar-auto-track: var(--wildberries-scrollbar-track);
-    --scrollbar-auto-scrollbar-color-thumb: var(--wildberries-scrollbar-thumb);
-    --scrollbar-auto-scrollbar-color-track: var(--wildberries-scrollbar-track);
-    --text-link: var(--wildberries-secondary-alt);
-}
-
-.theme-dark .pageWrapper-1PgVDX {
-    background-color: var(--background-primary);
-}
-
-.theme-dark .container-1D34oG {
-    background-color: var(--background-primary);
-}
-.theme-dark .root-1gCeng {
-    background-color: var(--background-primary);
-}
-.theme-dark .footer-2gL1pp {
-    background-color: var(--background-tertiary);
-}
-.theme-dark .headerNormal-T_seeN {
-    background-color: var(--background-tertiary);
-}
-.theme-dark .body-3iLsc4,
-.theme-dark .footer-1fjuF6 {
-    background-color: var(--background-secondary);
-}
-.theme-dark .autocomplete-1vrmpx {
-    background-color: var(--background-tertiary);
-}
-.theme-dark .selected-1Tbx07 {
-    background-color: var(--background-secondary);
-}
-
-.theme-dark .item-2hkk8m {
-    background-color: var(--header-primary);
-}
-
-.theme-dark .focused-3afm-j {
-    background-color: var(--background-mentioned-side);
-}
-
-.theme-dark svg {
-    color: var(--wildberries-svg);
-}
-
-.theme-dark .icon-1DeIlz {
-    color: var(--wildberries-svg);
-}
-.theme-dark .icon-22AiRD {
-    color: var(--wildberries-svg);
-}
-.theme-dark .premiumIcon-1rDbWQ {
-    color: #c79bff;
-}
-
-.theme-dark .ownerIcon-2NH9FM {
-    color: #ffd700;
-}
-
-.theme-dark .mentioned-xhSam7:before {
-    background-color: var(--wildberries-mention);
-}
-
-.theme-dark .mentioned-xhSam7 .mention {
-    background-color: var(--wildberries-mention);
-}
-
-.theme-dark .wrapper-3WhCwL {
-    color: var(--background-secondary-alt);
-}
-
-.interactive:hover {
-    background-color: var(--wildberries-tertiary);
-}
-
-.theme-dark .newMessagesBar-265mhP {
-    background-color: var(--background-secondary);
-}
-
-.theme-dark input {
-    background-color: var(--wildberries-input-box);
-}
-
-.theme-dark code {
-    background-color: var(--wildberries-input-box);
-}
-
-.theme-dark .inline {
-    background-color: var(--background-primary);
-}
-
-.theme-dark .embed-IeVjo5 {
-    border-color: var(--background-primary);
-}
-
-.theme-dark .item-2hkk8m {
-    color: var(--wildberries-secondary-alt);
-    background-color: var(--wildberries-secondary-alt);
-}
-
-.theme-dark .unread-2lAfLh {
-    background-color: var(--wildberries-secondary-alt);
-}
-
-.theme-dark rect[mask="url(#svg-mask-status-dnd)"] {
-    fill: var(--wildberries-red);
-}
-
-.theme-dark .numberBadge-2s8kKX {
-    background-color: var(--wildberries-red) !important;
-}
-
-.theme-dark .open-6_Y_aH {
-    background-color: var(--background-secondary);
-}
-
-.theme-dark .blockquoteContainer-U5TVEi {
-    background-color: var(--background-tertiary);
-}
-
-.theme-dark .blockquoteContainer-U5TVEi .blockquoteDivider-2hH8H6 {
-    background-color: var(--wildberries-secondary-alt);
-}
-
-.repliedMessage-VokQwo:before {
-    border-color: var(--wildberries-secondary-alt);
-}
-
-.thin-1ybCId {
-    background-color: var(--background-secondary);
-}
-
-.theme-dark .folder-21wGz3 {
-    background-color: var(--wildberries-secondary-alt);
-}
-
-.theme-dark .expandedFolderIconWrapper-1xLaU- {
-    color: white;
-}
-
-.theme-dark .panels-j1Uci_ {
-    background-color: #c79bff;
-    background-image: linear-gradient(326deg, #900048 0%, #240041 74%);
-}
-
-.theme-dark .headerPlaying-j0WQBV {
-    background-color: var(--background-tertiary);
-}
-
-.theme-dark .lookFilled-1Gx00P {
-    background-color: var(--wildberries-accent-color);
-}
-
-.theme-dark .colorGrey-2DXtkV {
-    background-color: var(--wildberries-less-hot);
-}
-
-.botTagRegular-2HEhHi {
-    transition: 0.5s;
-    background: rgba(114, 137, 218, 0.1);
-    color: #399ee6;
-}
-.botTagRegular-2HEhHi:hover {
-    transition: 0.5s;
-    background: #399ee6;
-    color: #fff;
-}
-
-.passthrough-1c2ewQ.selected-2YhbGh {
-    background-color: #ffd700 !important;
-}
-
-.role-2irmRk {
-    position: relative;
-    overflow: hidden;
-    border: none;
-    padding: 5px;
-}
-.roleCircle-3xAZ1j::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-    opacity: 0.2;
-    pointer-events: none;
-}
-.footer-1fjuF6 {
-    border-top: none;
-}
-
-.theme-dark .hljs {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    background-color: var(--wildberries-input-box);
-    color: white;
-}
-
-.theme-dark .markup-2BOw-j code {
-    border: 1px solid var(--wildberries-tertiary);
-}
-
-.theme-dark .powercord-codeblock-table td:first-child {
-    color: var(--background-mentioned-side);
-}
-
-.hljs-subtr {
-    color: white;
-}
-
-.hljs-doctag,
-.hljs-meta,
-.hljs-comment,
-.hljs-quote {
-    color: #c79bff;
-}
-
-.hljs-selector-tag,
-.hljs-selector-id,
-.hljs-template-tag,
-.hljs-regexp,
-.hljs-attr,
-.hljs-tag {
-    color: #399ee6;
-}
-
-.hljs-params,
-.hljs-selector-class,
-.hljs-bullet {
-    color: #c79bff;
-}
-
-.hljs-keyword,
-.hljs-section,
-.hljs-meta-keyword,
-.hljs-symbol,
-.hljs-type {
-    color: #00ffb7;
-}
-
-.hljs-addition,
-.hljs-number,
-.hljs-link {
-    color: #ffd700;
-}
-
-.hljs-string {
-    color: #399ee6;
-}
-
-.hljs-attribute,
-.hljs-addition {
-    color: #ffd700;
-}
-
-.hljs-variable,
-.hljs-template-variable {
-    color: #ff0e82;
-}
-
-.hljs-builtin-name,
-.hljs-built_in,
-.hljs-formula,
-.hljs-name,
-.hljs-title,
-.hljs-class,
-.hljs-function {
-    color: #ffd700;
-}
-
-.hljs-selector-pseudo,
-.hljs-deletion,
-.hljs-literal {
-    color: #ff4500;
-}
-
-.hljs-emphasis,
-.hljs-quote {
-    font-style: italic;
-}
-
-.hljs-params,
-.hljs-selector-class,
-.hljs-strong,
-.hljs-selector-tag,
-.hljs-selector-id,
-.hljs-template-tag,
-.hljs-section,
-.hljs-keyword {
-    font-weight: bold;
+    /* friends sidebar */
+    --background-secondary-alt: var(--wildberries-secondary-alt);
+    /* call controls, profile */
+    --background-tertiary: var(--wildberries-primary);
+    /* server list, find or start convo backgr */
+    --background-floating: var(--wildberries-primary);
+    /* context menus */
+    --channeltextarea-background: var(--wildberries-primary);
+    /* message textarea */
+    --deprecated-store-bg: var(--wildberries-primary);
+    /* friends or activity or something */
+    --deprecated-quickswitcher-input-background: var(--wildberries-primary);
+    /* quick search text box */
+    --deprecated-card-editable-bg: var(--wildberries-secondary-alt);
+    /* cards in settings (safe messaging, checkbox options) */
+    --autocomplete-bg: var(--wildberries-primary);
+    /* bot commands bg */
+    --interactive-normal: var(--wildberries-accent);
+    /* supposedly icons */
+    --interactive-muted: var(--wildberries-secondary-alt);
+    /* muted channel, others */
+    --interactive-hover: var(--wildberries-accent);
+    /* hover color */
+    --text-link: var(--wildberries-foreground);
+    /* hyperlink color */
+    --interactive-active: var(--wildberries-accent);
+    /* selected tab */
+    --text-muted: var(--wildberries-foreground-alt);
+    /* non important text */
+    --channels-default: var(--wildberries-foreground-alt);
+    /* channel not selected not hovered */
+    --background-accent: var(--wildberries-secondary);
+    /* new messages */
+    --background-message-hover: var(--wildberries-primary);
+    /* message background on hover */
+    --background-modifier-accent: var(--wildberries-foreground-alt);
+    /* similar to border, but native to discord */
+    --background-modifier-hover: var(--wildberries-secondary);
+    /* background modifier hover */
+    --background-modifier-active: var(--wildberries-secondary);
+    /* background modifier active */
+    --background-modifier-selected: var(--wildberries-secondary-alt);
+    /* background modifier selected */
+    --deprecated-card-bg: var(--wildberries-secondary-alt);
+    /* some cards in the settings */
+    --scrollbar-thin-thumb: var(--wildberries-secondary-alt);
+    /* thin scrollbar (such as channels in server) */
+    --scrollbar-thin-track: var(--wildberries-secondary-alt);
+    /* thin scrollbar track */
+    --scrollbar-auto-thumb: var(--wildberries-secondary-alt);
+    /* thick scrollbar (such as active friends) */
+    --scrollbar-auto-track: var(--wildberries-secondary);
+    /* thick scrollbar */
+    --radio-bar-accent-color: var(--wildberries-foreground);
+    /* border around radio buttons in settings */
+    --radio-group-dot-foreground: var(--wildberries-foreground);
+    /* dot color for radio buttons in settings */
+    --elevation-low:
+        0 1px 0 var(--wildberries-foreground-alt),
+        0 1.5px 0 var(--wildberries-foreground-alt),
+        0 2px 0 var(--wildberries-foreground-alt);
+    --bg-base-primary: var(--wildberries-primary);
+    /* Custom variables - Theme */
+    --color-main: var(--wildberries-primary);
+    /* main color theme */
+    --background-markup: var(--wildberries-secondary-alt);
+    /* background for code markup (``` blocks) */
+    --background-embed: var(--wildberries-secondary);
+    /* background for embeds (video links, ...) */
+    --background-modal: var(--wildberries-secondary);
+    /* main color of a modal dialog */
+    --background-dropdown: var(--wildberries-secondary-alt);
+    /* background of options in a dropdown */
+    --background-color: var(--wildberries-primary);
+    /* background color (for svg backgrounds and such) */
+    --messages-scroll-track: var(--wildberries-secondary-alt);
+    /* scrollbar background - only for messages */
+    --messages-scroll-thumb: var(--wildberries-secondary-alt);
+    /* basic scroller */
+    --progress-thumb: var(--wildberries-secondary);
+    /* volume bar thumb */
+    --progress-track-full: var(--wildberries-secondary-alt);
+    /* volume bar track - filled */
+    --progress-track-empty: var(--wildberries-secondary);
+    /* volume bar track - empty */
 }
