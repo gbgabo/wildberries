@@ -1,6 +1,6 @@
 /**
  * @name Wildberries
- * @version 1.0.1
+ * @version 1.1.2
  * @description 🍒 A dark theme made for purple lovers
  * @author Dimitrios Psaroudakis
  * @source https://github.com/gbgabo/wildberries
@@ -81,7 +81,7 @@
     /* some cards in the settings */
     --scrollbar-thin-thumb: var(--wildberries-secondary-alt);
     /* thin scrollbar (such as channels in server) */
-    --scrollbar-thin-track: var(--wildberries-secondary-alt);
+    --scrollbar-thin-track: transparent;
     /* thin scrollbar track */
     --scrollbar-auto-thumb: var(--wildberries-secondary-alt);
     /* thick scrollbar (such as active friends) */
