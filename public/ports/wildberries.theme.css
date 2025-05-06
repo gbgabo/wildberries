@@ -9,17 +9,17 @@
 @import url("https://mrtipson.github.io/DiscordCSS/css/base.css");
 
 :root {
-    --wildberries-primary: #19002e; /*very-dark-purple*/
-    --wildberries-secondary: #240041; /*dark-purple*/
-    --wildberries-secondary-alt: #900048; /*purple*/
-    --wildberries-foreground: #ff0e82; /*bright-purple*/
-    --wildberries-foreground-alt: #c79bff; /*dull-purple*/
-    --wildberries-accent: #00ffb7; /*bright-green*/
-    --wildberries-red: #d7004d;
-    --wildberries-blue: #399ee6;
-    --wildberries-yellow: #ffd700;
-    --wildberries-orange: #ff4500;
-    --wildberries-cyan: #00f7e2;
+    --wildberries-primary: #19002e !important; /*very-dark-purple*/
+    --wildberries-secondary: #240041 !important; /*dark-purple*/
+    --wildberries-secondary-alt: #900048 !important; /*purple*/
+    --wildberries-foreground: #ff0e82 !important; /*bright-purple*/
+    --wildberries-foreground-alt: #c79bff !important; /*dull-purple*/
+    --wildberries-accent: #00ffb7 !important; /*bright-green*/
+    --wildberries-red: #d7004d !important;
+    --wildberries-blue: #399ee6 !important;
+    --wildberries-yellow: #ffd700 !important;
+    --wildberries-orange: #ff4500 !important;
+    --wildberries-cyan: #00f7e2 !important;
 }
 
 .theme-dark.theme-dark {
