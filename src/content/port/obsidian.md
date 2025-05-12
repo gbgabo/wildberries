@@ -11,6 +11,7 @@ assets: ['Wildberries.zip']
 2. Extract it
 3. Place it inside /path/to/obsidian/vault/folder/.obsidian/themes
 4. Activate it by going to the Obsidian Settings menu and on Options -> Appearance -> Themes if you click on the arrows it should appear, select it and there you go
+5. Special thanks to an unkown source for the base theme, I can't remember where I found it
 
 ## Troubleshoot
 
