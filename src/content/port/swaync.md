@@ -1,6 +1,7 @@
 ---
 title: swaync
 platforms: ['linux']
+assets: ['https://github.com/LordWorm1996/Wildberries-Ports/blob/main/Source/swaync/config.json', 'https://github.com/LordWorm1996/Wildberries-Ports/blob/main/Source/swaync/style.css']
 ---
 
 1. Download the config.json and style.css from https://github.com/LordWorm1996/Wildberries-Ports/tree/main/Source/swaync
