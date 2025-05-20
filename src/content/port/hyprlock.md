@@ -3,5 +3,10 @@ title: hyprlock
 platforms: ['linux']
 ---
 
-1. Due to different licenses on this GitHub page and the one I (Lord Worm) made to post the ports the instructions for installing hyprlock are included at https://github.com/LordWorm1996/Wildberries-Ports
-2. Thank you for your understanding
+## Installation
+1. Download the hyprlock.conf from https://github.com/LordWorm1996/Wildberries-Ports/blob/main/Source/hyprlock.conf
+2. Place it on .config/hypr/
+
+## Troubleshoot
+1. Make sure you set your own displays in the conf file, you can find them by running `hyprctl monitors`
+2. Also, you need to add your own wallpaper paths (if you want any)
