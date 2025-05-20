@@ -1,6 +1,7 @@
 ---
 title: wofi
 platforms: ['linux']
+images: ['/src/assets/images/ports/wofi.png']
 ---
 
 1. Download the config from https://github.com/LordWorm1996/Wildberries-Ports/blob/main/Source/wofi/config and style.css from https://github.com/LordWorm1996/Wildberries-Ports/blob/main/Source/wofi/style.css
