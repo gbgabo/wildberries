@@ -1,6 +1,6 @@
 ---
 title: hyprlock
-images: ['src/assets/images/ports/hyprlock.png']
+images: ['/src/assets/images/ports/hyprlock.png']
 platforms: ['linux']
 ---
 
