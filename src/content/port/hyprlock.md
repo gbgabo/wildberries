@@ -1,6 +1,7 @@
 ---
 title: hyprlock
 platforms: ['linux']
+assets: ['src/assets/images/ports/hyprlock.jpeg']
 ---
 
 ## Installation
