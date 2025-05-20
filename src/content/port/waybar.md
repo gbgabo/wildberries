@@ -1,6 +1,7 @@
 ---
 title: waybar
 platforms: ['linux']
+images: ['/src/assets/images/ports/waybar.png']
 ---
 
 1. Download the config from https://github.com/LordWorm1996/Wildberries-Ports/blob/main/Source/waybar/config and style.css from https://github.com/LordWorm1996/Wildberries-Ports/blob/main/Source/waybar/config
