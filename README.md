@@ -38,7 +38,7 @@ applications being customized, I tried to follow some consistencies, and came up
 | Red     | `#d70040` | `215 0 64`   | `342.1° 100% 42.2%` | ![Red Color](https://via.placeholder.com/20/d70040/d70040?text=+)    |
 | Yellow  | `#ffd700` | `255 215 0`  | `50.6° 100% 50%`    | ![Yellow Color](https://via.placeholder.com/20/ffd700/ffd700?text=+) |
 | Blue    | `#399ee6` | `57 158 230` | `205° 77.6% 56.3%`  | ![Blue Color](https://via.placeholder.com/20/399ee6/399ee6?text=+)   |
-| Aqua    | `#00f7e2` | `0 247 226`  | `205° 77.6% 56.3%`  | ![Aqua Color](https://via.placeholder.com/20/00f7e2/00f7e2?text=+)   |
+| Aqua    | `#00f7e2` | `0 247 226`  | `174.9° 100% 48.43%`  | ![Aqua Color](https://via.placeholder.com/20/00f7e2/00f7e2?text=+)   |
 
   <!-- alternative for purple: #a470d8 -->
   <!-- Another interesting purple: #ac4ea4 -->
