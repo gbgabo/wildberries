@@ -1,0 +1,122 @@
+/**
+ * @name Wildberries
+ * @version 1.1.3
+ * @description 🍒 A dark theme made for purple lovers
+ * @author Dimitrios Psaroudakis
+ * @source https://github.com/gbgabo/wildberries
+*/
+
+@import url("https://mrtipson.github.io/DiscordCSS/css/base.css");
+
+:root {
+    --wildberries-primary: #19002e !important; /*very-dark-purple*/
+    --wildberries-secondary: #240041 !important; /*dark-purple*/
+    --wildberries-secondary-alt: #900048 !important; /*purple*/
+    --wildberries-foreground: #ff0e82 !important; /*bright-purple*/
+    --wildberries-foreground-alt: #c79bff !important; /*dull-purple*/
+    --wildberries-accent: #00ffb7 !important; /*bright-green*/
+    --wildberries-red: #d7004d !important;
+    --wildberries-blue: #399ee6 !important;
+    --wildberries-yellow: #ffd700 !important;
+    --wildberries-orange: #ff4500 !important;
+    --wildberries-cyan: #00f7e2 !important;
+}
+
+.theme-dark.theme-dark {
+    --logo-primary: var(--wildberries-primary);
+    /* discord nitro text, probably other stuff */
+    --header-primary: var(--wildberries-foreground-alt);
+    /* big text */
+    --header-secondary: var(--wildberries-foreground);
+    /* subtext => id, active channel, code markdown, server of mention */
+    --text-normal: var(--wildberries-foreground-alt);
+    /* normal text */
+    --background-primary: var(--wildberries-primary);
+    /* chat, call */
+    --background-secondary: var(--wildberries-secondary);
+    /* friends sidebar */
+    --background-secondary-alt: var(--wildberries-secondary-alt);
+    /* call controls, profile */
+    --background-tertiary: var(--wildberries-primary);
+    /* server list, find or start convo backgr */
+    --background-floating: var(--wildberries-primary);
+    /* context menus */
+    --channeltextarea-background: var(--wildberries-primary);
+    /* message textarea */
+    --deprecated-store-bg: var(--wildberries-primary);
+    /* friends or activity or something */
+    --deprecated-quickswitcher-input-background: var(--wildberries-primary);
+    /* quick search text box */
+    --deprecated-card-editable-bg: var(--wildberries-secondary-alt);
+    /* cards in settings (safe messaging, checkbox options) */
+    --autocomplete-bg: var(--wildberries-primary);
+    /* bot commands bg */
+    --interactive-normal: var(--wildberries-accent);
+    /* supposedly icons */
+    --interactive-muted: var(--wildberries-secondary-alt);
+    /* muted channel, others */
+    --interactive-hover: var(--wildberries-accent);
+    /* hover color */
+    --text-link: var(--wildberries-foreground);
+    /* hyperlink color */
+    --interactive-active: var(--wildberries-accent);
+    /* selected tab */
+    --text-muted: var(--wildberries-foreground-alt);
+    /* non important text */
+    --channels-default: var(--wildberries-foreground-alt);
+    /* channel not selected not hovered */
+    --background-accent: var(--wildberries-secondary);
+    /* new messages */
+    --background-message-hover: var(--wildberries-primary);
+    /* message background on hover */
+    --background-modifier-accent: var(--wildberries-foreground-alt);
+    /* similar to border, but native to discord */
+    --background-modifier-hover: var(--wildberries-secondary);
+    /* background modifier hover */
+    --background-modifier-active: var(--wildberries-secondary);
+    /* background modifier active */
+    --background-modifier-selected: var(--wildberries-secondary-alt);
+    /* background modifier selected */
+    --deprecated-card-bg: var(--wildberries-secondary-alt);
+    /* some cards in the settings */
+    --scrollbar-thin-thumb: var(--wildberries-secondary-alt);
+    /* thin scrollbar (such as channels in server) */
+    --scrollbar-thin-track: transparent;
+    /* thin scrollbar track */
+    --scrollbar-auto-thumb: var(--wildberries-secondary-alt);
+    /* thick scrollbar (such as active friends) */
+    --scrollbar-auto-track: var(--wildberries-secondary);
+    /* thick scrollbar */
+    --radio-bar-accent-color: var(--wildberries-foreground);
+    /* border around radio buttons in settings */
+    --radio-group-dot-foreground: var(--wildberries-foreground);
+    /* dot color for radio buttons in settings */
+    --elevation-low:
+        0 1px 0 var(--wildberries-foreground-alt),
+        0 1.5px 0 var(--wildberries-foreground-alt),
+        0 2px 0 var(--wildberries-foreground-alt);
+    --bg-base-primary: var(--wildberries-primary);
+    /* Custom variables - Theme */
+    --color-main: var(--wildberries-primary);
+    /* main color theme */
+    --background-markup: var(--wildberries-secondary-alt);
+    /* background for code markup (``` blocks) */
+    --background-embed: var(--wildberries-secondary);
+    /* background for embeds (video links, ...) */
+    --background-modal: var(--wildberries-secondary);
+    /* main color of a modal dialog */
+    --background-dropdown: var(--wildberries-secondary-alt);
+    /* background of options in a dropdown */
+    --background-color: var(--wildberries-primary);
+    /* background color (for svg backgrounds and such) */
+    --messages-scroll-track: var(--wildberries-secondary-alt);
+    /* scrollbar background - only for messages */
+    --messages-scroll-thumb: var(--wildberries-secondary-alt);
+    /* basic scroller */
+    --progress-thumb: var(--wildberries-secondary);
+    /* volume bar thumb */
+    --progress-track-full: var(--wildberries-secondary-alt);
+    /* volume bar track - filled */
+    --progress-track-empty: var(--wildberries-secondary);
+    /* volume bar track - empty */
+}

@@ -6,7 +6,7 @@ import Chip from '@components/Chip.astro';
 
 const backgroundColors = ['#19002e', '#240041', '#900048'];
 const foregroundColors = ['#ff0e82', '#c79bff', '#00ffb7'];
-const auxiliarColors = ['#399ee6', '#ffd700', '#d70040', '#ff4500'];
+const auxiliarColors = ['#399ee6', '#ffd700', '#d70040', '#ff4500', '#00f7e2'];
 
 const meta = {
   title: 'About Wildberries',
@@ -39,9 +39,9 @@ const meta = {
         <Pallete class="m-auto h-4 w-3/5 rounded-md md:w-2/3" colors={foregroundColors} />
       </div>
       <Pallete
-        class="absolute bottom-6 left-6 h-36 w-5 md:bottom-10 md:left-10"
+        class="absolute bottom-6 left-6 h-40 w-5 md:bottom-10 md:left-10"
         colors={auxiliarColors}
-        gridClasses="grid-rows-4 gap-5"
+        gridClasses="grid-rows-5 gap-5"
         spanClasses="span-col-1 rounded"
       />
     </div>
@@ -74,7 +74,7 @@ const meta = {
         </div>
         <div class="col-span-2">
           <h3 class="mb-2 text-light-purple">Auxiliar Colors</h3>
-          <Pallete class="h-40 w-80 rounded-xl" label colors={auxiliarColors} gridClasses="grid-cols-4" />
+          <Pallete class="h-40 w-96 rounded-xl" label colors={auxiliarColors} gridClasses="grid-cols-5" />
         </div>
       </div>
     </div>
