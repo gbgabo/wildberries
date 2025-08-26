@@ -3,6 +3,7 @@ title: obsidian
 images: ['/src/assets/images/ports/obsidian.png']
 platforms: ['linux', 'windows', 'mac']
 assets: ['Wildberries.zip']
+contributors: ['LordWorm1996']
 ---
 
 ## Installation

@@ -3,7 +3,12 @@ title: Discord
 images: ['/src/assets/images/ports/betterdiscord.png']
 platforms: ['linux', 'windows', 'mac']
 assets: ['wildberries.theme.css']
+contributors: ['LordWorm1996']
 ---
+## Info
+
+1. It works on Betterdiscord, Vencord and Vesktop, it should also work on other Discord clients.
+2. Special thanks to MrTipson on GitHub for the base.css https://github.com/MrTipson/DiscordCSS
 
 ## Installation
 
@@ -11,11 +16,6 @@ assets: ['wildberries.theme.css']
 2. Extract it
 3. Place it inside /path/to/BetterDiscord/themes
 4. Activate it by going to the Discord Settings menu and on BetterDiscord -> Themes, you should see the theme click the enable button
-
-## Info
-
-1. It works on Betterdiscord, Vencord and Vesktop, it should also work on other Discord clients.
-2. Special thanks to MrTipson on GitHub for the base.css https://github.com/MrTipson/DiscordCSS
 
 ## Troubleshoot
 

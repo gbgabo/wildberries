@@ -2,6 +2,7 @@
 title: wlogout
 platforms: ['linux']
 images: ['/src/assets/images/ports/wlogout.png']
+contributors: ['LordWorm1996']
 ---
 
 1. Download the contents of the folder on https://github.com/LordWorm1996/Wildberries-Ports/tree/main/Source/wlogout that include the pictures, layout and style.css

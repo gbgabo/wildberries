@@ -2,6 +2,7 @@
 title: hyprland
 images: ['/src/assets/images/ports/hyprland.png']
 platforms: ['linux']
+contributors: ['LordWorm1996']
 ---
 
 ## Installation

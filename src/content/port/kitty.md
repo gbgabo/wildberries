@@ -3,6 +3,7 @@ title: kitty
 images: ['/src/assets/images/ports/kitty.png']
 platforms: ['linux']
 assets: ['kitty.conf']
+contributors: ['LordWorm1996']
 ---
 
 1. Download the kitty.conf file
