@@ -4,7 +4,7 @@ platforms: ['linux', 'windows', 'mac']
 images: ['/src/assets/images/ports/alacritty.png']
 ---
 
-1. On your config.h or config.def.h, replace the `colors` array values to:
+1. On your [alacritty.toml config file](https://alacritty.org/config-alacritty.html#location), add/update the color parameters as below:
 
    ```toml
    [colors.primary]
@@ -39,8 +39,4 @@ images: ['/src/assets/images/ports/alacritty.png']
    white = "#edecee"
    ```
 
-2. Rebuild your dwm fork
-
-   ```bash
-   sudo make clean install
-   ```
+2. By default Alacritty live reloads its config file once updated. If that's not your case, restart your alacritty instance for changes to take effect;
