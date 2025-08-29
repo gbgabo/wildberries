@@ -3,6 +3,7 @@ title: zed
 images: ['/src/assets/images/ports/zed.png']
 platforms: ['linux', 'mac', 'windows']
 assets: ['wildberries.json']
+contributors: ['LordWorm1996']
 ---
 
 1. Download the wildberries.json on this page
