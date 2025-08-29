@@ -3,6 +3,7 @@ title: wezterm
 images: ['/src/assets/images/ports/wezterm.png']
 platforms: ['linux', 'windows', 'mac', 'FreeBSD', 'NetBSD']
 assets: ['.wezterm.lua']
+contributors: ['LordWorm1996']
 ---
 
 1. Download the .wezterm.lua file from this page (Do NOT change the Name!!!)
