@@ -1,5 +1,5 @@
 ---
-title: Discord
+title: Cosmic
 images: ['/src/assets/images/ports/cosmic.png']
 platforms: ['linux']
 assets: ['wildberries.ron']
