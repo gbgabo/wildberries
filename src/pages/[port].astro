@@ -38,7 +38,7 @@ const { title, images, assets } = port.data;
 const meta = {
   title: `Wildberries theme for ${title}`,
   description: `A dark purple colorscheme for ${title} and many other apps`,
-  image: `/api/og/${port.slug}.png`,
+  image: `${Astro.url.origin}/api/og/${port.slug}.png`,
 };
 const { Content } = await port.render();
 ---
