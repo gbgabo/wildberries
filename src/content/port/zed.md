@@ -1,6 +1,6 @@
 ---
 title: zed
-images: ['/src/assets/images/ports/zed.png']
+images: ['/src/assets/images/ports/zed-1.png', '/src/assets/images/ports/zed-2.png', '/src/assets/images/ports/zed-3.png']
 platforms: ['linux', 'mac', 'windows']
 assets: ['wildberries.json']
 contributors: ['LordWorm1996']
