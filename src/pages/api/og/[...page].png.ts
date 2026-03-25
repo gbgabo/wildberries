@@ -1,5 +1,3 @@
-import { readFileSync } from 'node:fs';
-import path from 'path';
 import { ImageResponse } from '@vercel/og';
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
@@ -111,7 +109,7 @@ export function getStaticPaths() {
   });
 }
 
-export const GET: APIRoute = async ({ props, request, url }) => {
+export const GET: APIRoute = async ({ props, url }) => {
   const { title, screenshot } = props;
   const data = fontData['--font-jetbrains-mono'].find(
     (font) => font.weight == '500' && font.src.some((f) => f.format === 'truetype')
@@ -154,7 +152,7 @@ export const GET: APIRoute = async ({ props, request, url }) => {
           }),
         ],
       }),
-      // screenshot && (await screenshotComponent(screenshot, request.url)),
+      // screenshot && (await screenshotComponent(screenshot, url)),
     ],
   });
 

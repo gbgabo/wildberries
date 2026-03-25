@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Button from '@components/Button.astro';
 import Hero from '@components/Hero.astro';
 import ExtendedFab from '@components/ExtendedFab.astro';
-import Chip from '@components/Chip.astro';
 import PortDetails from '@components/PortDetails.astro';
 
 import { Icon } from 'astro-icon/components';
@@ -11,7 +10,7 @@ import { Icon } from 'astro-icon/components';
 import { getCollection, render } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
-import type { InferGetStaticParamsType, InferGetStaticPropsType, GetStaticPaths } from 'astro';
+import type { GetStaticPaths } from 'astro';
 import AssetsImage from '@components/AssetsImage.astro';
 import Carousel from '@components/Carousel.astro';
 import PortLayout from '~/layouts/PortLayout.astro';
