@@ -114,7 +114,7 @@ export const GET: APIRoute = async ({ props, url }) => {
   const data = fontData['--font-jetbrains-mono'].find(
     (font) => font.weight == '500' && font.src.some((f) => f.format === 'truetype')
   );
-  const fontSrc = data.src.find((src) => src.format == 'truetype');
+  const fontSrc = data && data.src.find((src) => src.format == 'truetype');
 
   // Astro doesn't support tsx endpoints so I'm using React-element objects
   const html = div({
@@ -156,15 +156,18 @@ export const GET: APIRoute = async ({ props, url }) => {
     ],
   });
 
-  return new ImageResponse(html, {
-    width: 1200,
-    height: 630,
-    fonts: [
-      {
-        name: 'JetBrains Mono',
-        data: await fetch(new URL(fontSrc.url, url.origin)).then((res) => res.arrayBuffer()),
-        weight: 500,
-      },
-    ],
-  });
+  return new ImageResponse(
+    html,
+    fontSrc && {
+      width: 1200,
+      height: 630,
+      fonts: [
+        {
+          name: 'JetBrains Mono',
+          data: await fetch(new URL(fontSrc.url, url.origin)).then((res) => res.arrayBuffer()),
+          weight: 500,
+        },
+      ],
+    }
+  );
 };

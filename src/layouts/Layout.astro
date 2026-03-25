@@ -39,7 +39,7 @@ const { port, home, meta, solid } = Astro.props as Props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <Font cssVariable="--font-jetbrains-mono" />
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="5e45fe7d-9267-49ac-ab38-a58fd8903bd3"></script>
+    <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="5e45fe7d-9267-49ac-ab38-a58fd8903bd3"></script>
   </head>
   <TopBar search={home} solid={solid} port={port} />
   <body id="top">
