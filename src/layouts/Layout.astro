@@ -1,6 +1,6 @@
 ---
 // Supports weights 100-800
-import '@fontsource-variable/jetbrains-mono';
+import { Font } from "astro:assets";
 import "~/styles/global.css";
 import { SEO } from 'astro-seo';
 import Footer from '@components/Footer.astro';
@@ -38,6 +38,7 @@ const { port, home, meta, solid } = Astro.props as Props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <Font cssVariable="--font-jetbrains-mono" />
     <script defer src="https://cloud.umami.is/script.js" data-website-id="5e45fe7d-9267-49ac-ab38-a58fd8903bd3"></script>
   </head>
   <TopBar search={home} solid={solid} port={port} />

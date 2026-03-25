@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import wildberriesTheme from "./shiki-wildberries.json";
 
 import icon from "astro-icon";
@@ -32,6 +32,13 @@ export default defineConfig({
   markdown: {
     shikiConfig: { theme: wildberriesTheme },
   },
+
+  fonts: [{
+      provider: fontProviders.fontsource(),
+      name: "JetBrains Mono",
+      cssVariable: "--font-jetbrains-mono",
+      formats: ["woff2", "ttf"]
+    }],
 
   vite: {
     plugins: [tailwindcss()],
