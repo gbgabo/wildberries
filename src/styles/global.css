@@ -2,15 +2,15 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-dark-purple: "#240041";
-  --color-darker-purple: "#19002e";
-  --color-acid-green: "#00ffb7";
-  --color-cherry: "#900048";
-  --color-pink: "#ff0e82";
-  --color-light-purple: "#c79bff";
-  --color-grape: "#752dce";
-  --color-pastel-purple: "#e7d4ff";
-  --color-muted-purple: "#ecdeff";
+  --color-dark-purple: #240041;
+  --color-darker-purple: #19002e;
+  --color-acid-green: #00ffb7;
+  --color-cherry: #900048;
+  --color-pink: #ff0e82;
+  --color-light-purple: #c79bff;
+  --color-grape: #752dce;
+  --color-pastel-purple: #e7d4ff;
+  --color-muted-purple: #ecdeff;
 }
 
 :root {
