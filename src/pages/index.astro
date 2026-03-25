@@ -54,7 +54,7 @@ const patterns = [
     <div class="m-auto max-w-7xl">
       <h2 class="md:text-xl font-semibold my-11 text-light-purple">Check all apps wilberries is available for:</h2>
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {ports.map((port) => <Card href={`/${port.slug}`} title={port.data.title} />)}
+        {ports.map((port) => <Card href={`/${port.id}`} title={port.data.title} />)}
       </div>
     </div>
   </main>

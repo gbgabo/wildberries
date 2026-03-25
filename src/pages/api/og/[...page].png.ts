@@ -107,7 +107,7 @@ export function getStaticPaths() {
   return ports.map((page) => {
     const screenshot = page.data.images ? page.data.images[0] : undefined;
     return {
-      params: { page: page.slug },
+      params: { page: page.id },
       props: { title: page.data.title, screenshot: screenshot },
     };
   });
