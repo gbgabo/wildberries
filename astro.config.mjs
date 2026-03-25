@@ -1,14 +1,15 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import wildberriesTheme from "./shiki-wildberries.json";
 
 import icon from "astro-icon";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://wildberries.style/',
+
   integrations: [
-    tailwind(),
     icon({
       include: {
         tabler: ["download"],
@@ -27,7 +28,12 @@ export default defineConfig({
       },
     }),
   ],
+
   markdown: {
     shikiConfig: { theme: wildberriesTheme },
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
