@@ -77,7 +77,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## ➕ Adding a new port
 
-Have you ported **Wildberries** to another application? You can contribute it to this project!
+Have you ported **Wildberries** to another application? You may be able to contribute it to this project too!
 
 Each port requires:
 
@@ -106,7 +106,9 @@ This file should contain the installation instructions and the required frontmat
 | `assets`       | Downloadable installation files           |
 | `draft`        | If `true`, the port will not be published |
 
-Example:
+Check the full fields schema at `src/content/config.ts`.
+
+**Example:**
 
 ```md
 ---
@@ -130,27 +132,19 @@ Screenshots illustrate how the port looks in the target application.
 
 **Location:** `src/assets/images/ports/`
 
-Add the screenshot files there and reference them in the `images` field of the instruction file.
+Add the screenshot files there and reference them in the `images` field of the instruction file. Reference their **full file path**.
 
-Example:
-
-```
-src/assets/images/ports/doom-emacs.png
-```
-
----
+**Example:** The image `src/assets/images/ports/doom-emacs.png` will be declared in the `images` field as `["/src/assets/images/ports/doom-emacs.png"]`
 
 ### Installation assets (optional)
 
 If the port requires downloadable files (themes, configs, plugins, etc.), place them in: `public/ports/`
 
-Example:
+Add the files there and reference them in the `assets` field of the instruction file. Reference their **relative file path from starting `public/ports/`**.
 
-```
-public/ports/wildberries-doom-theme.zip
-```
+**Example:** The asset `public/ports/wildberries-doom-theme.zip` will be declared in the `assets` field as `["wildberries-doom-theme.zip"]`
 
-Each file listed in the `assets` field will automatically generate a **download button** on the port page.
+Each file listed in the `assets` field will automatically generate a **download button** on the port's page.
 
 ## 🌟 Credits
 
