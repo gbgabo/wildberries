@@ -2,6 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
+  --font-sans: var(--font-jetbrains-mono);
   --color-dark-purple: #240041;
   --color-darker-purple: #19002e;
   --color-acid-green: #00ffb7;
