@@ -74,6 +74,84 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`   | Preview your build locally, before deploying       |
 | `npm run astro ...` | Run CLI commands like `astro add`, `astro preview` |
 
+
+## ➕ Adding a new port
+
+Have you ported **Wildberries** to another application? You can contribute it to this project!
+
+Each port requires:
+
+* An **instruction file** (`.md`)
+* At least one **screenshot image**
+* Optional **installation assets** (if the port requires additional files)
+
+These files are organized across three directories in the repository.
+
+### Instruction file
+
+Create a markdown file describing how to install and use the port.
+
+**Location:** `src/content/port/<port-name>.md`
+
+This file should contain the installation instructions and the required frontmatter metadata.
+
+#### Metadata reference
+
+| Field          | Description                               |
+| -------------- | ----------------------------------------- |
+| `title`        | Name of the application the port targets  |
+| `platforms`    | Supported operating systems               |
+| `contributors` | GitHub usernames or names of contributors |
+| `images`       | Screenshot filenames                      |
+| `assets`       | Downloadable installation files           |
+| `draft`        | If `true`, the port will not be published |
+
+Example:
+
+```md
+---
+title: Doom Emacs
+platforms: ["linux", "windows"]
+contributors: ["your-name"]
+images: ["/src/assets/images/ports/doom-emacs.png"]
+assets: ["wildberries-doom-theme.zip"]
+---
+
+1. Download the theme files.
+2. Place them in your Doom Emacs config directory.
+3. Enable the theme in your configuration.
+```
+
+You can include any steps or explanations necessary to guide users through the installation process.
+
+### Screenshots
+
+Screenshots illustrate how the port looks in the target application.
+
+**Location:** `src/assets/images/ports/`
+
+Add the screenshot files there and reference them in the `images` field of the instruction file.
+
+Example:
+
+```
+src/assets/images/ports/doom-emacs.png
+```
+
+---
+
+### Installation assets (optional)
+
+If the port requires downloadable files (themes, configs, plugins, etc.), place them in: `public/ports/`
+
+Example:
+
+```
+public/ports/wildberries-doom-theme.zip
+```
+
+Each file listed in the `assets` field will automatically generate a **download button** on the port page.
+
 ## 🌟 Credits
 
 - Website inspired by [dracula theme](http://draculatheme.com/) by Zeno Rocha.
