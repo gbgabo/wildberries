@@ -30,5 +30,8 @@
     "@tailwindcss/typography": "^0.5.12",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.7.2"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
