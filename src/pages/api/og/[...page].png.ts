@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
 import { importImage } from '~/lib/assets';
 import { fontData, getImage } from 'astro:assets';
+import { div, span } from '~/lib/jsx';
 
 export const config = {
   runtime: 'edge',
@@ -57,48 +58,6 @@ const screenshotComponent = async (image: string, url: string) => {
   };
 };
 
-interface jsx {
-  type: string;
-  props: {
-    style?: { [key: string]: string };
-    tw?: string;
-    children?: jsx[] | string;
-  };
-}
-
-interface el {
-  type: string;
-  tw?: string;
-  style?: { [key: string]: string };
-  children?: jsx[] | string;
-  src?: string;
-}
-
-interface definedEl {
-  tw?: string;
-  style?: { [key: string]: string };
-  children?: jsx[] | string;
-}
-
-const el = ({ type, tw, style, children }: el): jsx => {
-  return {
-    type: type,
-    props: {
-      style: style,
-      tw: tw,
-      children: children,
-    },
-  };
-};
-
-const div = ({ tw, style, children }: definedEl) => {
-  return el({ type: 'div', tw, style, children });
-};
-
-const span = ({ tw, style, children }: definedEl) => {
-  return el({ type: 'span', tw, style, children });
-};
-
 export function getStaticPaths() {
   return ports.map((page) => {
     const screenshot = page.data.images ? page.data.images[0] : undefined;
@@ -115,6 +74,7 @@ export const GET: APIRoute = async ({ props, url }) => {
     (font) => font.weight == '500' && font.src.some((f) => f.format === 'truetype')
   );
   const fontSrc = data && data.src.find((src) => src.format == 'truetype');
+  console.log(fontSrc);
 
   // Astro doesn't support tsx endpoints so I'm using React-element objects
   const html = div({
