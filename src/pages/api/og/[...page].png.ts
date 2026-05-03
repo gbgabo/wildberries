@@ -2,7 +2,7 @@ import { ImageResponse } from '@vercel/og';
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
 import { importImage } from '~/lib/assets';
-import { fontData, getImage } from 'astro:assets';
+import { fontData, experimental_getFontFileURL, getImage } from 'astro:assets';
 import { div, span } from '~/lib/jsx';
 
 export const config = {
@@ -70,11 +70,16 @@ export function getStaticPaths() {
 
 export const GET: APIRoute = async ({ props, url }) => {
   const { title, screenshot } = props;
-  const data = fontData['--font-jetbrains-mono'].find(
+  const font = fontData['--font-jetbrains-mono'].find(
     (font) => font.weight == '500' && font.src.some((f) => f.format === 'truetype')
   );
-  const fontSrc = data && data.src.find((src) => src.format == 'truetype');
-  console.log(fontSrc);
+
+  if (font === undefined) {
+    throw new Error('Cannot find the font path.');
+  }
+
+  const fontPath = experimental_getFontFileURL(font.src[1]?.url, url);
+  const fontSrc = await fetch(fontPath).then((res) => res.arrayBuffer());
 
   // Astro doesn't support tsx endpoints so I'm using React-element objects
   const html = div({
@@ -124,7 +129,7 @@ export const GET: APIRoute = async ({ props, url }) => {
       fonts: [
         {
           name: 'JetBrains Mono',
-          data: await fetch(new URL(fontSrc.url, url.origin)).then((res) => res.arrayBuffer()),
+          data: fontSrc,
           weight: 500,
         },
       ],
