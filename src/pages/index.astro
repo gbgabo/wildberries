@@ -15,7 +15,7 @@ const ports = await getCollection('port', ({ data }) => {
 const meta = {
   title: 'Wildberries',
   description: 'A dark theme for purple lovers',
-  image: 'https://wildberries.style/api/og',
+  image: `${Astro.url.origin}/api/og/default.png`,
 };
 
 const patterns = [
