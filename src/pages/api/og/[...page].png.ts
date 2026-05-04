@@ -112,18 +112,15 @@ export const GET: APIRoute = async ({ props, url }) => {
     ],
   });
 
-  return new ImageResponse(
-    html,
-    fontSrc && {
-      width: 1200,
-      height: 630,
-      fonts: [
-        {
-          name: 'JetBrains Mono',
-          data: fontSrc,
-          weight: 500,
-        },
-      ],
-    }
-  );
+  return new ImageResponse(html, {
+    width: 1200,
+    height: 630,
+    fonts: [
+      {
+        name: 'JetBrains Mono',
+        data: fontSrc,
+        weight: 500,
+      },
+    ],
+  });
 };
