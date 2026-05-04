@@ -25,7 +25,7 @@ const { href, variant = 'primary', icon, fab } = Astro.props as Props;
     `}
 >
   {icon && <Icon width={25} height={25} class="col-span-1" name={icon} />}
-  <span class="whitespace-nowrap py-[1px]">
+  <span class="whitespace-nowrap py-px">
     <slot />
   </span>
 </a>

@@ -1,16 +1,13 @@
-import { readFileSync } from 'node:fs';
-import path from 'path';
 import { ImageResponse } from '@vercel/og';
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
-import { importImage } from '~/lib/assets';
+import { getFontSrc, importImage } from '~/lib/assets';
 import { getImage } from 'astro:assets';
+import { div, span } from '~/lib/jsx';
 
 export const config = {
   runtime: 'edge',
 };
-
-const font = readFileSync(path.resolve('src/assets/jetbrains-mono-all-500-normal.woff'));
 
 const ports = await getCollection('port');
 
@@ -61,60 +58,19 @@ const screenshotComponent = async (image: string, url: string) => {
   };
 };
 
-interface jsx {
-  type: string;
-  props: {
-    style?: { [key: string]: string };
-    tw?: string;
-    children?: jsx[] | string;
-  };
-}
-
-interface el {
-  type: string;
-  tw?: string;
-  style?: { [key: string]: string };
-  children?: jsx[] | string;
-  src?: string;
-}
-
-interface definedEl {
-  tw?: string;
-  style?: { [key: string]: string };
-  children?: jsx[] | string;
-}
-
-const el = ({ type, tw, style, children }: el): jsx => {
-  return {
-    type: type,
-    props: {
-      style: style,
-      tw: tw,
-      children: children,
-    },
-  };
-};
-
-const div = ({ tw, style, children }: definedEl) => {
-  return el({ type: 'div', tw, style, children });
-};
-
-const span = ({ tw, style, children }: definedEl) => {
-  return el({ type: 'span', tw, style, children });
-};
-
 export function getStaticPaths() {
   return ports.map((page) => {
     const screenshot = page.data.images ? page.data.images[0] : undefined;
     return {
-      params: { page: page.slug },
+      params: { page: page.id },
       props: { title: page.data.title, screenshot: screenshot },
     };
   });
 }
 
-export const GET: APIRoute = async ({ props, request }) => {
+export const GET: APIRoute = async ({ props, url }) => {
   const { title, screenshot } = props;
+  const fontSrc = await getFontSrc(url);
 
   // Astro doesn't support tsx endpoints so I'm using React-element objects
   const html = div({
@@ -152,7 +108,7 @@ export const GET: APIRoute = async ({ props, request }) => {
           }),
         ],
       }),
-      // screenshot && (await screenshotComponent(screenshot, request.url)),
+      // screenshot && (await screenshotComponent(screenshot, url)),
     ],
   });
 
@@ -161,8 +117,9 @@ export const GET: APIRoute = async ({ props, request }) => {
     height: 630,
     fonts: [
       {
-        name: 'JetBrains MonoVariable',
-        data: font,
+        name: 'JetBrains Mono',
+        data: fontSrc,
+        weight: 500,
       },
     ],
   });

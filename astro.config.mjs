@@ -1,14 +1,15 @@
-import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import { defineConfig, fontProviders } from "astro/config";
 import wildberriesTheme from "./shiki-wildberries.json";
 
 import icon from "astro-icon";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://wildberries.style/',
+
   integrations: [
-    tailwind(),
     icon({
       include: {
         tabler: ["download"],
@@ -27,7 +28,20 @@ export default defineConfig({
       },
     }),
   ],
+
   markdown: {
     shikiConfig: { theme: wildberriesTheme },
+  },
+
+  fonts: [{
+      provider: fontProviders.fontsource(),
+      name: "JetBrains Mono",
+      cssVariable: "--font-jetbrains-mono",
+      weights: [400, 500],
+      formats: ["woff2", "ttf"]
+    }],
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
