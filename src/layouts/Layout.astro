@@ -23,6 +23,9 @@ const { port, home, meta, solid } = Astro.props as Props;
 <!doctype html>
 <html lang="en" id="top" class="bg-dark-purple list-decimal scroll-smooth">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <SEO
       title={meta.title}
       description={meta.description}
@@ -33,18 +36,19 @@ const { port, home, meta, solid } = Astro.props as Props;
           image: meta.image,
         },
       }}
+      extend={{
+          link: [
+            { rel: "icon", type:"image/png", href: "/favicon/favicon-96x96.png", sizes: "96x96"},
+            { rel: "icon", type:"image/svg+xml", href: "/favicon/favicon.svg"},
+            { rel: "shortcut icon", href: "/favicon/favicon.ico"},
+            { rel: "apple-touch-icon", href: "/favicon/apple-touch-icon.png", sizes: "180x180"},
+            { rel: "manifest", href: "/favicon/site.webmanifest"},
+          ],
+          meta: [
+            { name: "apple-mobile-web-app-title", content: "Wildberries" }
+          ]
+      }}
     />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Wildberries" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
-
-    <meta name="generator" content={Astro.generator} />
     <Font cssVariable="--font-jetbrains-mono" />
     {Astro.url.hostname !== "localhost" &&
     <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="5e45fe7d-9267-49ac-ab38-a58fd8903bd3"></script>
