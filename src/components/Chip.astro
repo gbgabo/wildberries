@@ -18,7 +18,7 @@ const { value, href, variant, class: className } = Astro.props as Props;
 ---
 
 <span
-  class:list={[className, 'whitespace-pre rounded-md py-1 font-medium', variant ? variants[variant] : variants.primary]}
+  class:list={[className, 'whitespace-pre rounded-md py-1 px-2.5 font-medium', variant ? variants[variant] : variants.primary]}
 >
   {
     href ? (

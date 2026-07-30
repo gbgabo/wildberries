@@ -1,6 +1,7 @@
 ---
 import LabelledButton from '@components/LabelledButton.astro';
 import profilePic from '@assets/images/ui/profile_alpha.svg';
+import { Image } from 'astro:assets';
 
 interface Props {
   variant?: 'primary' | 'secondary';
@@ -18,5 +19,7 @@ const { variant = 'primary' } = Astro.props;
   class={`${variants[variant]} flex flex-col items-center justify-around gap-7 bg-darker-purple pb-56 pt-20 text-center text-acid-green md:flex-row`}
 >
   <LabelledButton top="Check the project on" bottom="Github" href="https://github.com/gbgabo/wildberries" />
-  <LabelledButton top="Made with ♥ by" bottom="@gbgabo" image={profilePic} href="https://github.com/gbgabo" />
+  <LabelledButton top="Made with ♥ by" bottom="@gbgabo" href="https://github.com/gbgabo" >
+      <Image slot="icon" alt="gbgabo icon" src={profilePic}/>
+  </LabelledButton>
 </footer>
