@@ -11,10 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.8",
+    "@astrojs/check": "^0.9.10",
     "@tailwindcss/vite": "^4.2.2",
     "@vercel/og": "^0.11.1",
-    "astro": "^6.0.8",
+    "astro": "^7.1.6",
     "astro-icon": "^1.1.0",
     "astro-seo": "^1.1.0",
     "tailwindcss": "^4.2.2",
@@ -29,9 +29,6 @@
     "@iconify-json/tabler": "^1.1.106",
     "@tailwindcss/typography": "^0.5.12",
     "prettier": "^3.2.5",
-    "prettier-plugin-tailwindcss": "^0.7.2"
-  },
-  "overrides": {
-    "vite": "^7"
+    "prettier-plugin-tailwindcss": "^0.8.1"
   }
 }
