@@ -1,5 +1,5 @@
 ---
-title: zed
+title: helix
 images: ['/src/assets/images/ports/helix.png']
 platforms: ['linux', 'mac', 'windows']
 assets: ['wildberries.toml']
