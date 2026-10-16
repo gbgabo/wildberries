@@ -1,0 +1,70 @@
+# See the full configuration reference: https://rioterm.com/docs/config
+
+confirm-before-quit = false
+enable-scroll-bar = false
+
+# Wildberries color scheme
+[colors]
+background = "#19002e"
+foreground = "#ff0e82"
+
+cursor = "#00ffb7"
+vi-cursor = "#00ffb7"
+
+selection-background = "#240041"
+selection-foreground = "#900048"
+
+# Regular ANSI colors
+black = "#19002e"
+red = "#d70040"
+green = "#00ffb7"
+yellow = "#ffd700"
+blue = "#399ee6"
+magenta = "#ff0e82"
+cyan = "#00f7e2"
+white = "#c79bff"
+
+# Bright ANSI colors
+light-black = "#2a003f"
+light-red = "#f40056"
+light-green = "#00ffcc"
+light-yellow = "#ffdf00"
+light-blue = "#58a8f3"
+light-magenta = "#ff2b99"
+light-cyan = "#00ffdb"
+light-white = "#e0a9ff"
+
+[fonts]
+size = 17
+hinting = true
+
+[fonts.regular]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Bold"
+weight = 700
+
+[fonts.bold]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Bold"
+weight = 700
+
+[fonts.italic]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Bold"
+weight = 700
+
+[fonts.bold-italic]
+family = "JetBrainsMono Nerd Font Propo"
+style = "Bold"
+weight = 700
+
+[window]
+opacity = 0.85
+decorations = "Disabled"
+blur = true
+
+[navigation]
+mode = "Plain"
+
+[renderer]
+target-fps = 60

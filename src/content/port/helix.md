@@ -1,7 +1,7 @@
 ---
 title: helix
 images: ['/src/assets/images/ports/helix.png']
-platforms: ['linux', 'mac', 'windows']
+platforms: ['linux']
 assets: ['wildberries.toml']
 contributors: ['LordWorm1996']
 ---
